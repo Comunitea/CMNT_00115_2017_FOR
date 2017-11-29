@@ -30,7 +30,7 @@ $ sudo apt-get install libreadline-dev
 Clonar repositorio
 > git clone https://github.com/comunitea/cmnt_bo_10.git
 
-O el respositorio que corresponda 
+O el respositorio que corresponda
 
 
 - Crear un virtualenv dentro de la carpeta del respositorio. Esto podría ser opcional, obligatorio para desarrollo o servidor de pruebas, tal vez podríamos no hacerlo para un despliegue en producción. Si no está instalado, instalar el paquete de virtualenv. Es necesario tener la versión que se instala con easy_install o con pip, desinstalar el paquete python-virtualenv si fuera necesario e instalarlo con easy_install
@@ -44,13 +44,13 @@ $ cd cmnt_bo_10
 ```
 O la carpeta que corresponda
 ```
-$ virtualenv sandbox --no-setuptools
+$ virtualenv -p python3.5 sandbox --no-setuptools
 ```
-Executar bootstrap. 
+Executar bootstrap.
 ```
-$ sandbox/bin/python bootstrap.py
+$ sandbox/bin/python3.5 bootstrap.py -c [archivo_buildout]
 ```
-Se creará la siguiente estrucura de directorios 
+Se creará la siguiente estrucura de directorios
 
 ```bash
 
@@ -83,7 +83,7 @@ odoo
 $ bin/supervisord
 $ bin/buildout -c [archivo_buildout]
 ```
-- Conectarse al supervisor con localhost:9002 
+- Conectarse al supervisor con localhost:9002
 - Si fuera necesario hacer update all, se puede parar desde el supervisor y en la consola hacer:
 ```
 $ cd bin
@@ -133,12 +133,12 @@ Rastislav Kober, http://www.kybi.sk
 
 Después de jecutar con éxito el buildout, basta utilizar el siguiente comando:
 ```
-$ bin/buildout -o odoo:freeze-to=odoo-freeze.cfg 
+$ bin/buildout -o odoo:freeze-to=odoo-freeze.cfg
 ```
 Se creará un archivo llamado `odoo-freeze.cfg` con las dependencias y revisionnes de cada mudulo. De este modo
 tendremso el control de módulos y versiones usadas.
 
 Para utilizar el `freeze` basta executar
 ```
-$ bin/buildout -c odoo-freeze.cfg 
+$ bin/buildout -c odoo-freeze.cfg
 ```
