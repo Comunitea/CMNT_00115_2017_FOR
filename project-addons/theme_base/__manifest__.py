@@ -44,6 +44,7 @@
     ],
     'data': [
         'templates/head.xml',
+        'templates/footer.xml',
         'templates/404.xml',
         'templates/menu.xml'
     ],
