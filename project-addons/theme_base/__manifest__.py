@@ -43,6 +43,9 @@
         'seo_base'
     ],
     'data': [
+        'templates/head.xml',
+        'templates/404.xml',
+        'templates/menu.xml'
     ],
     'images': [
         '/static/description/icon.png',
