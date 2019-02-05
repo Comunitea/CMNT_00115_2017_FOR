@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Add custom styles -->
+    <template id="theme_for_website_assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link href="/theme_forestal/static/css/_general.less" rel="stylesheet" type="text/less"/>
+            <link href="/theme_forestal/static/css/header.less" rel="stylesheet" type="text/less"/>
+        </xpath>
+    </template>
+
+</odoo>
