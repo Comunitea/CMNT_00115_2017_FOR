@@ -26,9 +26,9 @@
 ##############################################################################
 
 {
-    'name': 'Website base module',
+    'name': 'Base Module to Init Website Backend',
     'version': '1.0',
-    'summary': 'Website base customization module',
+    'summary': 'Provides a Skeleton to build a generic backend base module',
     'description': '',
     'category': 'Website',
     'author': 'Comunitea',
@@ -40,13 +40,11 @@
     ],
     'depends': [
         'ecommerce_base',
-        'seo_base'
+        'website_theme_install',
+        'seo_base',
+        'codecoupon_base'
     ],
     'data': [
-        'templates/head.xml',
-        'templates/footer.xml',
-        'templates/404.xml',
-        'templates/menu.xml'
     ],
     'images': [
         '/static/description/icon.png',
