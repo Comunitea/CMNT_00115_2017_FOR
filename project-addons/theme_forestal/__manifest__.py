@@ -52,6 +52,7 @@
         'templates/head.xml',
         'templates/footer.xml',
         'templates/header.xml',
+        'templates/breadcrumbs_bar.xml',
         'templates/404.xml',
         'templates/page_home.xml',
         'templates/page_aboutus.xml',

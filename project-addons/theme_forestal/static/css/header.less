@@ -61,6 +61,12 @@ header {
         background-color: @color-bg-black;
         position: fixed;
         top: 0;
+        & .wp_breadcrumbs_base {
+            background-color: rgba(0,0,0,0);
+            & ol.breadcrumb span {
+                color: @white;
+            }
+        }
     }
     &.fixed {
         position: fixed;
@@ -80,10 +86,8 @@ header {
 .wp_breadcrumbs_base {
     background: @color-bg;
     color: @color-text;
-}
-.breadcrumbs_base {
     & ol.breadcrumb {
-        background: @color-bg;
+        background: none;
         color: @color-text;
         margin-bottom: 0;
         padding-left: 0;

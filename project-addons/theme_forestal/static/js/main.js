@@ -1,6 +1,6 @@
 /* Hide top menu part with scroll */
 $(window).on('scroll', function() {
-    if ($(window).scrollTop() > 135) {
+    if ($(window).scrollTop() > 145) {
         $('.wp-contact-navbar').hide();
         if(!$('header').hasClass('homepage-header')){$('.header-fixed-margin').show();}
         $('header').addClass('fixed');
