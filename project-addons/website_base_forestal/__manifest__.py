@@ -39,7 +39,6 @@
         'seo_base',
         'codecoupon_base',
         'breadcrumbs_base',
-        'breadcrumbs_base_tmp',
         'website_theme_install',
     ],
     'data': [
