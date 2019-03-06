@@ -55,9 +55,10 @@
         'templates/breadcrumbs_bar.xml',
         'templates/404.xml',
         'templates/page_home.xml',
-        'templates/page_aboutus.xml',
         'templates/product.xml',
         'templates/cart.xml',
+        'templates/who_we_are.xml',
+        'templates/our_advantages.xml',
     ],
     'images': [
         '/static/description/icon.png',

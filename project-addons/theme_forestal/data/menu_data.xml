@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <!-- Main menu -->
         <record id="website.main_menu" model="website.menu">
@@ -23,24 +23,67 @@
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
 
-        <!-- Contact Us -->
-        <record id="website.menu_contactus" model="website.menu">
-            <field name="sequence" type="int">30</field>
-            <field name="website_id" ref="website_base_forestal.forestal_website"/>
-        </record>
-
         <!-- About Us -->
         <record id="menu_aboutus" model="website.menu">
             <field name="name">About us</field>
-            <field name="url">/aboutus</field>
-            <field name="page_id" ref="website.aboutus_page"/>
-            <field name="sequence" type="int">40</field>
+            <!--<field name="url">/aboutus</field>-->
+            <!--<field name="page_id" ref="website.aboutus_page"/>-->
+            <field name="sequence" type="int">30</field>
             <field name="parent_id" ref="website.main_menu" />
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
 
-        <!--Delete Default Menus-->
-        <delete id="website_sale_product_brand.menu_website_sale_brand" model="website.menu"/>
+        <!-- About Us Submenu -->
+        <record id="aboutus_submenu_who" model="website.menu">
+            <field name="name">Who We Are</field>
+            <field name="url">/page/who_we_are</field>
+            <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
+            <field name="sequence" type="int">10</field>
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+            <field name="website_published">True</field>
+        </record>
+        <record id="aboutus_submenu_advantage" model="website.menu">
+            <field name="name">Our Advantages</field>
+            <field name="url">/page/our_advantages</field>
+            <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
+            <field name="sequence" type="int">20</field>
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+            <field name="website_published">True</field>
+        </record>
+
+        <!-- Products -->
+        <record id="menu_aboutus" model="website.menu">
+            <field name="name">About us</field>
+            <!--<field name="url">/aboutus</field>-->
+            <!--<field name="page_id" ref="website.aboutus_page"/>-->
+            <field name="sequence" type="int">30</field>
+            <field name="parent_id" ref="website.main_menu" />
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+        </record>
+
+        <!-- Products Submenu -->
+        <record id="aboutus_submenu_who" model="website.menu">
+            <field name="name">Who We Are</field>
+            <field name="url">/page/who_we_are</field>
+            <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
+            <field name="sequence" type="int">10</field>
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+            <field name="website_published">True</field>
+        </record>
+        <record id="aboutus_submenu_advantage" model="website.menu">
+            <field name="name">Our Advantages</field>
+            <field name="url">/page/our_advantages</field>
+            <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
+            <field name="sequence" type="int">20</field>
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+            <field name="website_published">True</field>
+        </record>
+
+        <!-- Contact Us -->
+        <record id="website.menu_contactus" model="website.menu">
+            <field name="sequence" type="int">40</field>
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+        </record>
 
     </data>
 </odoo>
