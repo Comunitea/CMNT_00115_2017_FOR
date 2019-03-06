@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+        <data noupdate="1">
+
+            <!--Update Main Company-->
+            <record id="base.main_company" model="res.company">
+                <field name="logo" type="base64" file="website_base_forestal/static/img/company_logo.png"/>
+            </record>
+
+        </data>
+</odoo>
