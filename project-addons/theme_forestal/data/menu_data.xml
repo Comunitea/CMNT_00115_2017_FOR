@@ -40,7 +40,7 @@
         </record>
 
         <!--Delete Default Menus-->
-        <!--<delete id="website_sale_product_brand.menu_website_sale_brand" model="website.menu"/>-->
+        <delete id="website_sale_product_brand.menu_website_sale_brand" model="website.menu"/>
 
     </data>
 </odoo>
