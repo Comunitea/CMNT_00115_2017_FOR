@@ -2,7 +2,7 @@
 <odoo>
 
     <!-- Footer changes -->
-    <template id="theme_for_website_footer_default" inherit_id="website.footer_default">
+    <template id="website_footer_default" inherit_id="website.footer_default">
         <xpath expr="//div[@id='footer']/div[hasclass('row')]" position="replace">
             <div class="row">
                 <div class="col-md-4 col-lg-3">

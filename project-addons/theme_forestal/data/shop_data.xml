@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="demo_category_1" model="product.public.category">
+            <field name="name">Viga Laminada Atrio</field>
+            <field name="slug">viga-laminada-atrio</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="demo_category_2" model="product.public.category">
+            <field name="name">Viga Laminada Duo</field>
+            <field name="slug">viga-laminada-duo</field>
+            <field name="sequence">11</field>
+        </record>
+
+        <record id="demo_category_3" model="product.public.category">
+            <field name="name">Tablón Finger</field>
+            <field name="slug">tablon-finger</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="demo_category_4" model="product.public.category">
+            <field name="name">Tablón Duo</field>
+            <field name="slug">tablon-duo</field>
+            <field name="sequence">21</field>
+        </record>
+
+        <record id="demo_category_5" model="product.public.category">
+            <field name="name">Tabla Finger</field>
+            <field name="slug">tabla-finger</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="demo_category_6" model="product.public.category">
+            <field name="name">Listón Finger</field>
+            <field name="slug">liston-finger</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="demo_category_7" model="product.public.category">
+            <field name="name">Alistonado</field>
+            <field name="slug">alistonado</field>
+            <field name="sequence">41</field>
+        </record>
+
+        <record id="demo_category_8" model="product.public.category">
+            <field name="name">Tarima Finger</field>
+            <field name="slug">tarima-finger</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="demo_category_9" model="product.public.category">
+            <field name="name">Tarima Finger Sencilla</field>
+            <field name="slug">tarima-finger-sencilla</field>
+            <field name="sequence">51</field>
+        </record>
+        <record id="demo_category_10" model="product.public.category">
+            <field name="name">Tarima G Finger Sencilla</field>
+            <field name="slug">tarima-g-finger-sencilla</field>
+            <field name="sequence">52</field>
+        </record>
+
+        <!-- ==================================== Viga Laminada Atrio ========================================== -->
+        <record id="demo_product_1" model="product.template">
+            <field name="name">Viga Laminada Atrio 9x9x200</field>
+            <field name="description_short">Viga Laminada Atrio 9x9x200</field>
+            <field name="default_code">Viga Laminada Atrio 9x9x200</field>
+            <field name="slug">Viga-Laminada-Atrio-9x9x200</field>
+            <field name="type">product</field>
+            <field name="list_price">30</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_1')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">200</field>
+        </record>
+        <record id="demo_product_11" model="product.template">
+            <field name="name">Viga Laminada Atrio 9x9x250</field>
+            <field name="description_short">Viga Laminada Atrio 9x9x250</field>
+            <field name="default_code">Viga Laminada Atrio 9x9x250</field>
+            <field name="slug">Viga-Laminada-Atrio-9x9x250</field>
+            <field name="type">product</field>
+            <field name="list_price">35</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_1')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">250</field>
+        </record>
+        <record id="demo_product_12" model="product.template">
+            <field name="name">Viga Laminada Atrio 9x9x300</field>
+            <field name="description_short">Viga Laminada Atrio 9x9x300</field>
+            <field name="default_code">Viga Laminada Atrio 9x9x300</field>
+            <field name="slug">Viga-Laminada-Atrio-9x9x300</field>
+            <field name="type">product</field>
+            <field name="list_price">40</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_1')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">300</field>
+        </record>
+
+        <!-- ==================================== Viga Laminada Duo ========================================== -->
+        <record id="demo_product_2" model="product.template">
+            <field name="name">Viga Laminada Duo 9x9x200</field>
+            <field name="description_short">Viga Laminada Duo 9x9x200</field>
+            <field name="default_code">Viga Laminada Duo 9x9x200</field>
+            <field name="slug">Viga-Laminada-Duo-9x9x200</field>
+            <field name="type">product</field>
+            <field name="list_price">30</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_2')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadaduo.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">200</field>
+        </record>
+        <record id="demo_product_21" model="product.template">
+            <field name="name">Viga Laminada Duo 9x9x250</field>
+            <field name="description_short">Viga Laminada Duo 9x9x250</field>
+            <field name="default_code">Viga Laminada Duo 9x9x250</field>
+            <field name="slug">Viga-Laminada-Duo-9x9x250</field>
+            <field name="type">product</field>
+            <field name="list_price">35</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_2')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadaduo.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">250</field>
+        </record>
+        <record id="demo_product_22" model="product.template">
+            <field name="name">Viga Laminada Duo 9x9x300</field>
+            <field name="description_short">Viga Laminada Duo 9x9x300</field>
+            <field name="default_code">Viga Laminada Duo 9x9x300</field>
+            <field name="slug">Viga-Laminada-Duo-9x9x300</field>
+            <field name="type">product</field>
+            <field name="list_price">40</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_2')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadaduo.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">300</field>
+        </record>
+
+        <!-- ==================================== Tablon Finger ========================================== -->
+        <record id="demo_product_3" model="product.template">
+            <field name="name">Tablon Finger 9x4x200</field>
+            <field name="description_short">Tablon Finger 9x4x200</field>
+            <field name="default_code">Tablon Finger 9x4x200</field>
+            <field name="slug">Tablon-finger-9x4x200</field>
+            <field name="type">product</field>
+            <field name="list_price">30</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_3')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">200</field>
+        </record>
+        <record id="demo_product_31" model="product.template">
+            <field name="name">Tablon Finger 9x4x250</field>
+            <field name="description_short">Tablon Finger 9x4x250</field>
+            <field name="default_code">Tablon Finger 9x4x250</field>
+            <field name="slug">Tablon-finger-9x4x250</field>
+            <field name="type">product</field>
+            <field name="list_price">35</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_3')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">250</field>
+        </record>
+        <record id="demo_product_32" model="product.template">
+            <field name="name">Tablon Finger 9x4x300</field>
+            <field name="description_short">Tablon Finger 9x4x300</field>
+            <field name="default_code">Tablon Finger 9x4x300</field>
+            <field name="slug">Tablon-finger-9x4x300</field>
+            <field name="type">product</field>
+            <field name="list_price">40</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_3')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">300</field>
+        </record>
+
+        <!-- ==================================== Tablon Finger ========================================== -->
+        <record id="demo_product_4" model="product.template">
+            <field name="name">Tablon Finger 9x4x200</field>
+            <field name="description_short">Tablon Finger 9x4x200</field>
+            <field name="default_code">Tablon Finger 9x4x200</field>
+            <field name="slug">Tablon-finger-9x4x200</field>
+            <field name="type">product</field>
+            <field name="list_price">30</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_4')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">200</field>
+        </record>
+        <record id="demo_product_41" model="product.template">
+            <field name="name">Tablon Finger 9x4x250</field>
+            <field name="description_short">Tablon Finger 9x4x250</field>
+            <field name="default_code">Tablon Finger 9x4x250</field>
+            <field name="slug">Tablon-finger-9x4x250</field>
+            <field name="type">product</field>
+            <field name="list_price">35</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_4')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">250</field>
+        </record>
+        <record id="demo_product_42" model="product.template">
+            <field name="name">Tablon Finger 9x4x300</field>
+            <field name="description_short">Tablon Finger 9x4x300</field>
+            <field name="default_code">Tablon Finger 9x4x300</field>
+            <field name="slug">Tablon-finger-9x4x300</field>
+            <field name="type">product</field>
+            <field name="list_price">40</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_4')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">300</field>
+        </record>
+
+        <!-- ==================================== Tabla Finger ========================================== -->
+        <record id="demo_product_5" model="product.template">
+            <field name="name">Tabla Finger 9x2x200</field>
+            <field name="description_short">Tabla Finger 9x2x200</field>
+            <field name="default_code">Tabla Finger 9x2x200</field>
+            <field name="slug">Tabla-finger-9x2x200</field>
+            <field name="type">product</field>
+            <field name="list_price">30</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_5')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablafinger.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">200</field>
+        </record>
+        <record id="demo_product_51" model="product.template">
+            <field name="name">Tabla Finger 9x2x250</field>
+            <field name="description_short">Tabla Finger 9x2x250</field>
+            <field name="default_code">Tabla Finger 9x2x250</field>
+            <field name="slug">Tabla-finger-9x2x250</field>
+            <field name="type">product</field>
+            <field name="list_price">35</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_5')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablafinger.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">250</field>
+        </record>
+        <record id="demo_product_52" model="product.template">
+            <field name="name">Tabla Finger 9x2x300</field>
+            <field name="description_short">Tabla Finger 9x2x300</field>
+            <field name="default_code">Tabla Finger 9x2x300</field>
+            <field name="slug">Tabla-finger-9x2x300</field>
+            <field name="type">product</field>
+            <field name="list_price">40</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_5')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablafinger.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">300</field>
+        </record>
+
+        <!-- ==================================== Liston Finger x2 ========================================= -->
+        <record id="demo_product_6" model="product.template">
+            <field name="name">Liston Finger 9x2x200</field>
+            <field name="description_short">Liston Finger 9x2x200</field>
+            <field name="default_code">Liston Finger 9x2x200</field>
+            <field name="slug">Liston-finger-9x2x200</field>
+            <field name="type">product</field>
+            <field name="list_price">30</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">200</field>
+        </record>
+        <record id="demo_product_61" model="product.template">
+            <field name="name">Liston Finger 9x2x250</field>
+            <field name="description_short">Liston Finger 9x2x250</field>
+            <field name="default_code">Liston Finger 9x2x250</field>
+            <field name="slug">Liston-finger-9x2x250</field>
+            <field name="type">product</field>
+            <field name="list_price">35</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">250</field>
+        </record>
+        <record id="demo_product_62" model="product.template">
+            <field name="name">Liston Finger 9x2x300</field>
+            <field name="description_short">Liston Finger 9x2x300</field>
+            <field name="default_code">Liston Finger 9x2x300</field>
+            <field name="slug">Liston-finger-9x2x300</field>
+            <field name="type">product</field>
+            <field name="list_price">40</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">300</field>
+        </record>
+
+        <!-- ==================================== Liston Finger x4 ========================================= -->
+        <record id="demo_product_7" model="product.template">
+            <field name="name">Liston Finger 9x4x400</field>
+            <field name="description_short">Liston Finger 9x4x200</field>
+            <field name="default_code">Liston Finger 9x4x200</field>
+            <field name="slug">Liston-finger-9x4x200</field>
+            <field name="type">product</field>
+            <field name="list_price">30</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">200</field>
+        </record>
+        <record id="demo_product_71" model="product.template">
+            <field name="name">Liston Finger 9x4x250</field>
+            <field name="description_short">Liston Finger 9x4x250</field>
+            <field name="default_code">Liston Finger 9x4x250</field>
+            <field name="slug">Liston-finger-9x4x250</field>
+            <field name="type">product</field>
+            <field name="list_price">35</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">250</field>
+        </record>
+        <record id="demo_product_72" model="product.template">
+            <field name="name">Liston Finger 9x4x300</field>
+            <field name="description_short">Liston Finger 9x4x300</field>
+            <field name="default_code">Liston Finger 9x4x300</field>
+            <field name="slug">Liston-finger-9x4x300</field>
+            <field name="type">product</field>
+            <field name="list_price">40</field>
+            <field name="website_published">true</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
+            <field name="height">9</field>
+            <field name="width">9</field>
+            <field name="length">300</field>
+        </record>
+
+    </data>
+</odoo>

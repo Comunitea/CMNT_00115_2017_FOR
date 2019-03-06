@@ -30,7 +30,7 @@
     'version': '1.0',
     'summary': 'FrontEnd customization for Website Custom Theme Website',
     'description': 'This is a theme module that contains styles and layout elements for front-end part.',
-    'category': 'Theme/Ecommerce',
+    'category': 'Theme',
     'author': 'Comunitea',
     'website': 'http://www.comunitea.com',
     'license': 'AGPL-3',
@@ -39,13 +39,24 @@
         'Rubén Seijas <ruben@comunitea.com>',
     ],
     'depends': [
-        'module_base'
+        'website_base_forestal',
+        'website_sale',
+        'website_sale_options',
+        'sale_volume',
     ],
     'data': [
-        'templates/404.xml',
-        'templates/footer.xml',
+        'templates/pages.xml',
+        'data/page_data.xml',
+        'data/menu_data.xml',
+        'data/shop_data.xml',
         'templates/head.xml',
-        'templates/menu.xml'
+        'templates/footer.xml',
+        'templates/header.xml',
+        'templates/404.xml',
+        'templates/page_home.xml',
+        'templates/page_aboutus.xml',
+        'templates/product.xml',
+        'templates/cart.xml',
     ],
     'images': [
         '/static/description/icon.png',

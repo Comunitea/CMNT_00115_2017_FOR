@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <!--Home-->
+    <template id="homepage">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- About Us-->
+    <template id="aboutus">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container"/>
+            </div>
+        </t>
+    </template>
+
+</odoo>

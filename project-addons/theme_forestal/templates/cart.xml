@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Includes Dimensión to add to cart modal-->
+    <template id="website_sale_options_add_cart_modal" inherit_id="website_sale_options.modal">
+        <xpath expr="//thead/tr/th[2]" position="after">
+            <th class="text-center td-dimension">Dimensión</th>
+        </xpath>
+
+        <xpath expr="//tbody/tr/td[2]" position="after">
+            <td class='text-center td-dimension'>
+                <span t-esc="product.dimension"/>
+            </td>
+        </xpath>
+    </template>
+
+    <!--Includes Dimensión to cart in review order-->
+    <template id="website_sale_cart_lines" inherit_id="website_sale.cart_lines">
+        <xpath expr="//thead/tr/th[2]" position="after">
+            <th class="text-center td-dimension">Dimensión</th>
+        </xpath>
+
+        <xpath expr="//tbody/t/tr/td[3]" position="after">
+            <td class='text-center td-dimension'>
+                <span t-esc="line.product_id.dimension"/>
+            </td>
+        </xpath>
+    </template>
+
+    <!--Includes Dimensión to cart in order payment-->
+    <template id="website_sale_cart_payment" inherit_id="website_sale.payment">
+        <xpath expr="//thead/tr/th[2]" position="after">
+            <th class="text-center td-dimension">Dimensión</th>
+        </xpath>
+
+        <xpath expr="//tbody/tr/td[3]" position="after">
+            <td class='text-center td-dimension'>
+                <span t-esc="line.product_id.dimension"/>
+            </td>
+        </xpath>
+    </template>
+
+    <!--Includes Dimensión to cart in order confirmation-->
+    <template id="website_sale_cart_confirmation" inherit_id="website_sale.confirmation">
+        <xpath expr="//thead/tr/th[2]" position="after">
+            <th class="text-center td-dimension">Dimensión</th>
+        </xpath>
+
+        <xpath expr="//tbody/tr/td[2]" position="after">
+            <td class='text-center td-dimension'>
+                <span t-esc="line.product_id.dimension"/>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>

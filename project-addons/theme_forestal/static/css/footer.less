@@ -1,4 +1,13 @@
 footer {
+    /*background: url("/theme_forestal/static/img/sliders/slider_paisaje.jpg") no-repeat center center /cover #000;*/
+    background-color: @color-bg-black;
+    color: @white;
+    & a {
+        color: @white;
+        &:hover {
+            color: @color-dark;
+        }
+    }
     & #footer {
         & ul.list-unstyled {
             & li {
@@ -17,5 +26,8 @@ footer {
                 }
             }
         }
+    }
+    & .text-muted {
+        color: @white;
     }
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- About us page -->
+    <template id="aboutus_template" inherit_id="theme_forestal.aboutus">
+        <xpath expr="//div[@class='container']" position="inside">
+            <div class="container">
+                <section class="s_title">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center">Quiénes Somos</h1>
+                                <h3 class="text-center text-muted">Forestal Maderera Luis Cuesta S.L.</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image mt32">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 mb32">
+                                <h3>Fundación</h3>
+                                <p>
+                                    En 1995 nace Forestal Maderera con el objetivo de ofrecer a nuestros clientes los mejores productos de madera de pino silvestre.
+                                </p>
+                                <h3>Entorno</h3>
+                                <p>
+                                    Nuestro entorno privilegiado cercano a la Sierra de Guadarrama, así como la experiencia acumulada,
+                                    aseguran la calidad en nuestros productos generados a partir de la mejor materia prima.
+                                </p>
+                                <h3>Nuestra Oferta</h3>
+                                <p>
+                                    Ofrecemos vigas macizas y laminadas, tablas, tablones, tarima, madera en rollo
+                                    y otros productos en diversas escuadrías adaptándonos a las medidas de las necesidades
+                                    de nuestros clientes así como distintos tratamientos para nuestros productos.
+                                    Nuestra meta es responder a las solicitudes de forma rápida y flexible siendo
+                                    nuestro objetivo atender a los pedidos a los pocos días de su recepción.
+                                </p>
+                                <h3>Nuestro Objetivo</h3>
+                                <p>
+                                    Nos esforzamos para ofrecer productos elaborados utilizando madera como materia prima.
+                                    Por ello, hemos realizado una apuesta decisiva en los últimos años por la producción de madera laminada encolada de pino silvestre.
+                                </p>
+                                <p>
+                                    Forestal Maderera únicamente trabaja con madera prima procedente de bosques sostenibles
+                                    apoyando un régimen forestal acorde a la legalidad y promoviendo la sostenibilidad del medio ambiente.
+                                </p>
+                            </div>
+                            <div class="col-md-6 mb32">
+                                <img class="img img-responsive" src="/theme_forestal/static/img/sliders/slider_paisaje.jpg" alt="Sierra de Guadarrama"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Snippets' area -->
+                <div class="oe_structure" />
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

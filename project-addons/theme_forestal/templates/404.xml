@@ -2,7 +2,7 @@
 <odoo>
 
     <!-- Error 404 for static pages -->
-    <template id="theme_for_website_404" inherit_id="website.404">
+    <template id="website_404" inherit_id="website.404">
         <xpath expr="//div[hasclass('container')]" position="replace">
             <div class="container">
                 <div class="mt16 mb32 row">
@@ -26,7 +26,7 @@
     </template>
 
     <!-- No product defined (eCommerce category) -->
-    <template id="theme_for_website_sale_products" inherit_id="website_sale.products">
+    <template id="website_sale_products" inherit_id="website_sale.products">
         <xpath expr="//t[@t-if='not bins']/div" position="replace">
             <div class="text-center">
                 <h1>No product defined</h1>

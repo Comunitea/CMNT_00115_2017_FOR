@@ -1,21 +1,97 @@
-.wp-contact-navbar {
-    padding: 10px 0;
-    & .contact-separator {
-        position: absolute;
-        width: 1px;
-        height: 20px;
-        border-right: 1px solid @color-1;
-        right: 16%;
+/* Header */
+header {
+    background-color: @color-bg-black;
+    width: 100%;
+    z-index: 99;
+    & .wp-contact-navbar {
+        padding: 10px 0;
+        color: @white;
+        & a {
+            color: @color-light;
+            &:hover {
+                color: @color-dark;
+            }
+        }
+        & .contact-separator {
+            position: absolute;
+            width: 1px;
+            height: 20px;
+            border-right: 1px solid @color-1;
+            right: 16%;
+            top: 0;
+        }
+    }
+    & .navbar {
+        border: none;
+        background: none;
+    }
+    & .navbar-default {
+        & .navbar-nav > li > a, & & .navbar-nav > li > a.dropdown-toggle {
+            color: @color-current;
+            background: none !important;
+            padding: 15px;
+            line-height: 20px;
+            border: none;
+            outline-offset: 0;
+            &:hover, &:focus {
+                color: @color-dark;
+                outline: 2px solid @white;
+            }
+        }
+        & .navbar-nav > li.active > a, & .navbar-nav > li.open > a {
+            color: @color-dark;
+            outline: 2px solid @white;
+            &:hover, &:focus {
+                color: @color-dark;
+                outline: 2px solid @white;
+            }
+        }
+        & .navbar-nav > li > .dropdown-menu {
+            margin-right: -3px;
+        }
+    }
+    & a.navbar-brand.logo {
+        & img {
+            height: 28px;
+            margin-top: 12px;
+        }
+    }
+    /* Fixed header part */
+    &.homepage-header {
+        background-color: @color-bg-black;
+        position: fixed;
         top: 0;
     }
+    &.fixed {
+        position: fixed;
+        top: 0;
+        padding-top: 5px;
+        background-color: @color-bg-black;
+    }
+    & .header-fixed-margin {
+        display: none;
+    }
+    &.homepage-header .header-fixed-margin {
+        display: block;
+    }
 }
-.navbar-default {
-    background-color: @color-1;
-    & .navbar-nav {
-        & li {
-            & a {
-                color: @color-2;
-            }
+
+/* Breadcrumbs */
+.wp_breadcrumbs_base {
+    background: @color-bg;
+    color: @color-text;
+}
+.breadcrumbs_base {
+    & ol.breadcrumb {
+        background: @color-bg;
+        color: @color-text;
+        margin-bottom: 0;
+        padding-left: 0;
+        & a {
+            color: @color-href;
+        }
+        & span {
+            color: @color-text;
         }
     }
 }
