@@ -119,7 +119,8 @@
         <!--About Us-->
         <record id="website.aboutus_page" model="website.page">
             <field name="name">About us</field>
-            <field name="view_id" ref="theme_forestal.aboutus"/>
+            <field name="url">/aboutus</field>
+            <field name="view_id" ref="theme_forestal.aboutus_template"/>
         </record>
 
 
