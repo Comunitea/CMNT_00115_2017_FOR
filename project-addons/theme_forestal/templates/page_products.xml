@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- About us page -->
+    <template id="products_template" name="Who We Are" inherit_id="theme_forestal.products">
+        <xpath expr="//div[@class='container']" position="inside">
+            <div class="container">
+
+                <section class="s_title mt32" id="products">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-center">Productos</h1>
+                            <h2 class="text-center text-muted">Conozca nuestros distintos tipos de productos</h2>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="s_container mt32 mb32" id="vigueria_finger">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Viguería Finger</h2>
+                            <h4>Madera seca, de calidad y de grandes largos.</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                Los listones en madera seca, de calidad y de grandes largos es un producto que tiene
+                                multitud de aplicaciones y por consiguiente tiene alta demanda. Son usados con frecuencia
+                                como elementos constructivos en entramados de madera y como elementos decorativos en revestimientos.
+                            </p>
+                            <p>
+                                Por contra, estas piezas son en general difíciles de obtener realizadas en madera maciza
+                                ya que con frecuencia se tuercen consecuencia del secado posterior al aserrado y
+                                las imperfecciones (nudos) presentes de forma natural en la madera.
+                            </p>
+                            <p>
+                                La solución es utilizar uniones finger que permiten ensamblar longitudinalmente piezas de madera
+                                seca obteniendo listones a medida de la calidad y largo que se requieran.
+                                Posteriormente pueden ser cortados o encolados originándose una amplia gama de posibilidades.
+                            </p>
+                            <p>
+                                Pueden consultar posibilidades en nuestro
+                                <u>
+                                    <a href="https://www.forestalmaderera.com/CATALOGO-LISTONES-FINGER-Y-VIGUERIA-LAMINADA.pdf" target="_blank"
+                                       alt="Catálogo PDF Viguería Finger" title="Catálogo PDF Viguería Finger" rel="noopener noreferrer nofollow">
+                                        Catálogo Explicativo en PDF
+                                    </a>
+                                </u>.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mt32 mb32">
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <img class="img-responsive" src="https://www.forestalmaderera.com/wp-content/uploads/2018/03/03.jpg" alt="proceso finger" title="proceso finger"/>
+                            </div>
+                            <div class="col-md-4">
+                                <img class="img-responsive" src="https://www.forestalmaderera.com/wp-content/uploads/2018/03/04.jpg" alt="detalle unión" title="detalle unión"/>
+                            </div>
+                            <div class="col-md-4">
+                                <img class="img-responsive" src="https://www.forestalmaderera.com/wp-content/uploads/2018/03/05.jpg" alt="tablón finger terminado" title="tablón finger terminado"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr/>
+
+                <section class="s_container" id="madera_aserrada">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Madera Aserrada</h2>
+                            <h4>
+                                El aserrado es el eje vertebral de nuestra actividad productiva generando piezas de
+                                <strong>madera maciza de pino silvestre</strong> de diversas escuadrías según necesidad.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                Son esenciales tanto la materia prima como la experiencia y los conocimientos adquiridos
+                                a lo largo de <strong>más de 20 años en el sector</strong>, que nos permiten una adecuada clasificación
+                                de la madera según su uso utilizando además la norma <strong>UNE 56544</strong>.
+                            </p>
+                            <p>
+                                Los distintos productos generados pueden entregarse, si se desea,
+                                <strong>cepillados, tratados y pintados</strong> conforme a distintos acabados estéticos.
+                            </p>
+                            <p>
+                                La solución es utilizar uniones finger que permiten ensamblar longitudinalmente piezas de madera
+                                seca obteniendo listones a medida de la calidad y largo que se requieran.
+                                Posteriormente pueden ser cortados o encolados originándose una amplia gama de posibilidades.
+                            </p>
+                            <p>
+                                Nuestros principales productos de madera aserrada son:
+                            </p>
+                            <ul>
+                                <li>
+                                    <strong>Vigas macizas:</strong> Fabricamos vigas a medida en todas las escuadrías hasta largos de 11 metros
+                                </li>
+                                <li>
+                                    <strong>Tablas y tablones:</strong> en distintas calidades para carpintería, uso estructural o encofrado.
+                                </li>
+                                <li>
+                                    <strong>Rastreles.</strong>
+                                </li>
+                                <li>
+                                    <strong>Traviesas.</strong>
+                                </li>
+                                <li>
+                                    <strong>Taco para palet.</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <hr/>
+
+                <section class="s_container" id="madera_laminada">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Madera Laminada</h2>
+                            <h4>
+                                Las vigas de madera laminada son un producto estructural innovador que sencillamente integra lo mejor de la madera como material.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                Para su fabricación se utilizan tablones de madera seca cepillados que se encolan entre sí con las fibras en paralelo.
+                                Para el encolado de nuestras vigas utilizamos cola mono-componente a base de poliuretano con elevada resistencia al agua y a las altas temperaturas.
+                            </p>
+                            <p>
+                                Somos pioneros en la fabricación de este producto en pino silvestre que ofrece múltiples ventajas frente a la madera laminada importada de abeto.
+                                Ofrecemos un producto de mayor valor estético y estructural, con menos nudos, mayor densidad y de una tonalidad natural más oscura y agradable.
+                            </p>
+                            <p>
+                                Las láminas incorporadas a la viga son de calidad ME-1 conforme a la norma UNE 56544 lo que
+                                nos permite un material con propiedades propias de la clase <strong>GL24H</strong>.
+                            </p>
+                            <p>
+                                Las <strong>vigas laminadas</strong> son un material atractivo, de gran rendimiento y versatilidad. Sus principales ventajas son:
+                            </p>
+                            <ul>
+                                <li>
+                                    <strong>Gran estabilidad de forma:</strong>
+                                    La madera en ocasiones se tuerce, deforma y contrae ligeramente con la variación en las
+                                    condiciones ambientales consecuencia del efecto desigual dependiendo del corte respecto de la fibra.
+                                    La madera laminada, al incorporar diversas láminas, elimina el efecto y es altamente estable en cuanto a forma.
+                                </li>
+                                <li>
+                                    <strong>Grandes dimensiones:</strong>
+                                    Las vigas pueden fabricarse con las dimensiones que se deseen.
+                                    En <strong>Forestal Maderera</strong> ofrecemos l<strong>ongitudes de hasta 12m y escuadrías máximas de 440 x 190</strong>.
+                                </li>
+                                <li>
+                                    <strong>Calidad de superficie:</strong>
+                                    El producto está formado por tablones seleccionados mediante la eliminación de defectos
+                                    por lo que la cantidad de nudos se ve reducida. El acabado es siempre cepillado.
+                                </li>
+                                <li>
+                                    <strong>Las propias de la madera:</strong>
+                                    Belleza y valor ambiental, relación resistencia-peso, facilidad de trabajo, resistencia al fuego, sostenibilidad y respeto al medio ambiente.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <hr/>
+
+                <section class="s_container" id="tarima">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Tarima</h2>
+                            <h4>
+                                Tarima maciza de pino silvestre.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                Ofrecemos tarima maciza de pino silvestre con <strong>distintos perfiles y acabados para suelos y techos</strong>
+                                entregándose el producto cepillado, tratado y pintado según gustos estéticos.
+                            </p>
+                            <p>
+                                Las tonalidades más claras aportan mayor luminosidad aumentando la sensación de amplitud mientras
+                                que los tonos más oscuros dan protagonismo a la madera resaltando el veteado natural del material.
+                            </p>
+                            <p>
+                                Nuestra tarima de pino silvestre es un <strong>excelente aislante</strong>
+                                que origina un tacto cálido y agradable en ambientes fríos,
+                                no transmite energía estática y es natural y renovable con facilidad mediante lijado a largo plazo.
+                            </p>
+                            <p>
+                                Ofrecemos distintos perfiles y medidas según sus necesidades tratando de ofrecerle un servicio rápido y flexible.
+                                Podemos, si lo desea, proporcionarle rodapiés para sus suelos e incluso para paseos.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr/>
+
+                <section class="s_container" id="tratamientos_y_acabados">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>AUTOCLAVE</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                La madera es un material orgánico y está sujeto a degradación por la acción de organismos vivos
+                                (hongos e insectos) y agentes atmosféricos (sol y lluvia) dependiendo el efecto de muchos factores siendo el principal la humedad.
+                            </p>
+                            <p>
+                                En <strong>Forestal Maderera</strong> ponemos a su disposición nuestra experiencia al respecto para
+                                determinar cuáles son las medidas preventivas adecuadas en su caso ofreciéndole el tratamiento adecuado.
+                                Disponemos de autoclave para tratamiento de la madera en uso estructural en toda circunstancia ambiental (riesgo 3).
+                            </p>
+                            <p>
+                                El proceso consiste en un vacío previo con el objetivo de eliminar el aire presente en el material
+                                tras lo cual se aplica un producto protector en base disolvente en una atmosfera de presión para propiciar
+                                la penetración en el material. El resultado es un producto de garantía y durable en el tiempo.
+                                En caso de que la madera esté en contacto directo con el suelo sería conveniente
+                                el tratamiento con sales en el que la madera adquiere un color verde característico (riesgo 4).
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>CEPILLADO</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                Los productos aserrados pueden entregarse, si lo desea, cepillados. El resultado es un producto
+                                con la superficie lisa y regular y un tacto suave. La madera laminada y tarima se entrega cepillada
+                                mientras que en el resto de los productos puede realizarse o no dependiendo de sus gustos y necesidades.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>PINTURA</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                Ofrecemos distintos acabados estéticos para nuestros productos mediante pigmentación
+                                a base de resinas acrílicas que incorporan una protección adicional al producto en particular frente a la carcoma.
+                                La pigmentación de la madera resalta el veteado natural potenciando su valor estético.
+                            </p>
+                            <p>
+                                Las tonalidades más claras aportan mayor luminosidad y amplitud frente al carácter más cálido y de recogimiento de las oscuras.
+                                Tonalidades rojizas pueden ser también atractivos y exóticos.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr/>
+
+                <section class="s_container mb32" id="madera_en_rollo">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Madera en rollo</h2>
+                            <h4>
+                                La madera en rollo (o madera en palos) son troncos desramados y descortezados.
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                Suelen utilizarse en cubiertas rústicas aunque los posibles usos son diversos.
+                                <strong>Forestal Maderera</strong> proporciona madera en rollo de diversas longitudes agrupadas por franjas de diámetro al tener los troncos cierta conicidad.
+                            </p>
+                            <p>
+                                Si lo desea, pueden realizarse una o dos caras a los palos para así facilitar la instalación de las cubiertas.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="mb32"/>
+
+                <!-- Snippets' area -->
+                <div class="oe_structure" />
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

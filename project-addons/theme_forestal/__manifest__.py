@@ -61,6 +61,7 @@
         'templates/page_home.xml',
         'templates/page_who_we_are.xml',
         'templates/page_our_advantages.xml',
+        'templates/page_products.xml',
     ],
     'images': [
         '/static/description/icon.png',

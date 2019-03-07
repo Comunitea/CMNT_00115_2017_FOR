@@ -132,5 +132,14 @@
             <field name="view_id" ref="theme_forestal.our_advantages"/>
         </record>
 
+        <!--Products-->
+        <record id="id_page_products" model="website.page">
+            <field name="name">Products</field>
+            <field name="website_ids" eval="[(6, 0, [ref('website_base_forestal.forestal_website')])]"/>
+            <field name="website_published">True</field>
+            <field name="url">/page/products</field>
+            <field name="view_id" ref="theme_forestal.products"/>
+        </record>
+
     </data>
 </odoo>

@@ -26,4 +26,13 @@
         </t>
     </template>
 
+    <!--Products-->
+    <template id="products">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container"/>
+            </div>
+        </t>
+    </template>
+
 </odoo>
