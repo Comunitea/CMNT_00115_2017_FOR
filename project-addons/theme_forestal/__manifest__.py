@@ -30,8 +30,8 @@
 {
     'name': 'Theme Forestal',
     'version': '1.0',
-    'summary': 'FrontEnd customization for Website Custom Theme Website',
-    'description': 'This is a theme module that contains styles and layout elements for front-end part.',
+    'summary': 'FrontEnd customization for Forestal Website',
+    'description': '',
     'category': 'Theme',
     'author': 'Comunitea',
     'website': 'http://www.comunitea.com',

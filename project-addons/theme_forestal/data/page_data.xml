@@ -117,12 +117,6 @@
         </record>
 
         <!--About Us-->
-        <record id="website.aboutus_page" model="website.page">
-            <field name="name">About us</field>
-            <field name="url">/aboutus</field>
-            <field name="view_id" ref="theme_forestal.aboutus"/>
-        </record>
-
         <record id="id_page_who" model="website.page">
             <field name="name">Who We Are</field>
             <field name="website_ids" eval="[(6, 0, [ref('website_base_forestal.forestal_website')])]"/>
@@ -130,7 +124,6 @@
             <field name="url">/page/who_we_are</field>
             <field name="view_id" ref="theme_forestal.who_we_are"/>
         </record>
-
         <record id="id_page_advantages" model="website.page">
             <field name="name">Our Advantages</field>
             <field name="website_ids" eval="[(6, 0, [ref('website_base_forestal.forestal_website')])]"/>
@@ -138,7 +131,6 @@
             <field name="url">/page/our_advantages</field>
             <field name="view_id" ref="theme_forestal.our_advantages"/>
         </record>
-
 
     </data>
 </odoo>

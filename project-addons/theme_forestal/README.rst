@@ -1,5 +1,8 @@
-Website Custom Theme
-====================
+Theme Forestal
+==============
+
+FrontEnd customization for Forestal Website
+-------------------------------------------
 
 This is a theme module that contains styles and layout elements for front-end part.
 
