@@ -271,7 +271,7 @@
 
                 <hr/>
 
-                <section class="s_container mb32" id="madera_en_rollo">
+                <section class="s_container mb32" id="marcado_ce">
                     <div class="row">
                         <div class="col-md-12">
                             <h2>Madera en rollo</h2>
@@ -288,6 +288,64 @@
                             </p>
                             <p>
                                 Si lo desea, pueden realizarse una o dos caras a los palos para así facilitar la instalación de las cubiertas.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <hr/>
+
+                <section class="s_container mb32" id="madera_en_rollo">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Madrcado CE</h2>
+                            <h4>
+                                <strong>Forestal Maderera</strong> fabrica acorde con la normativa y por ello puede ofrecerle sus productos en madera maciza de uso estructural certificados con marcado CE..
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>
+                                El <strong>marcado CE </strong>es un sello creado por la Unión Europea que se aplica sobre un producto y que implica el cumplimiento de unos requisitos de seguridad.
+                                En particular, en el mundo de la madera asegura unas propiedades mecánicas mínimas.
+                            </p>
+                            <p>
+                                Para su obtención es necesario clasificar visualmente la madera conforma a la norma <strong>UNE 56544</strong>
+                                siendo el sistema de control auditado por <strong>TECNALIA</strong> de forma anual.
+                            </p>
+                            <p>
+                                <strong>Madera Estructural</strong>
+                                <ul>
+                                    <li>Canto (mm)	> 7</li>
+                                    <li>Propiedades	C22</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Resistencia (N/mm²)</strong>
+                                <ul>
+                                    <li>Flexión	22</li>
+                                    <li>Tracción paralela 13</li>
+                                    <li>Tracción perpendicular 0,4</li>
+                                    <li>Compresión paralela	20</li>
+                                    <li>Compresión perpendicular 2,4</li>
+                                    <li>Cortante 3,8</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>Rigidez (kN/mm²)</strong>
+                                <ul>
+                                    <li>Módulo de elasticidad paralelo medio 10</li>
+                                    <li>Módulo de elasticidad paralelo 5º percentil	6,7</li>
+                                    <li>Módulo de elasticidad transversal medio	0,63</li>
+                                </ul>
+                            </p>
+                            <p>
+                                <strong>MDensidad (Kg/m³)</strong>
+                                <ul>
+                                    <li>Densidad característica	340</li>
+                                    <li>Densidad media 410</li>
+                                </ul>
                             </p>
                         </div>
                     </div>

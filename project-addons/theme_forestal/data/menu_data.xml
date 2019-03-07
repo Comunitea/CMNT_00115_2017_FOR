@@ -81,6 +81,14 @@
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
+        <record id="products_submenu_marcado" model="website.menu">
+            <field name="name">Marcado CE</field>
+            <field name="url">/page/products#marcado_ce</field>
+            <field name="parent_id" ref="theme_forestal.menu_products"/>
+            <field name="sequence" type="int">37</field>
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+            <field name="website_published">True</field>
+        </record>
 
         <!-- About Us -->
         <record id="menu_aboutus" model="website.menu">
