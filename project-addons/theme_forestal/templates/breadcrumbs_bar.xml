@@ -16,10 +16,10 @@
     </template>
 
     <!-- Remove the Blog breadcrumb's bar -->
-    <!--<template id="theme_for_breadcrumbs_blog_remove" inherit_id="website_blog.blog_breadcrumb">
+    <template id="theme_for_breadcrumbs_blog_remove" inherit_id="website_blog.blog_breadcrumb">
         <xpath expr="//div[hasclass('container')]" position="attributes">
             <attribute name="t-if">True == False</attribute>
         </xpath>
-    </template>-->
+    </template>
 
 </odoo>

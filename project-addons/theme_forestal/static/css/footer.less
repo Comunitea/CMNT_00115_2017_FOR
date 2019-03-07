@@ -1,7 +1,8 @@
 footer {
-    /*background: url("/theme_forestal/static/img/sliders/slider_paisaje.jpg") no-repeat center center /cover #000;*/
-    background-color: @color-bg-black;
+    background: url("/theme_forestal/static/img/footer-bg.jpg") no-repeat center center / cover;
+    background-color: rgba(0,0,0,0.85);
     color: @white;
+    position: relative;
     & a {
         color: @white;
         &:hover {
@@ -30,4 +31,13 @@ footer {
     & .text-muted {
         color: @white;
     }
+    /*& .footer-background {
+        background: url("/theme_forestal/static/img/sliders/slider_aserrar.jpg") no-repeat center center / cover;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: -1;
+    }*/
 }

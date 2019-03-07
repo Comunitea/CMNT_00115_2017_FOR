@@ -35,4 +35,42 @@
         </t>
     </template>
 
+    <!-- ======================================= Information pages ======================================= -->
+
+    <!--Template Delivery-->
+    <template id="template_delivery">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- Page Delivery -->
+    <record id="page_delivery" model="website.page">
+        <field name="name">Delivery</field>
+        <field name="website_published">True</field>
+        <field name="website_ids" eval="[(6, 0, [ref('website_base_forestal.forestal_website')])]"/>
+        <field name="url">/page/delivery</field>
+        <field name="view_id" ref="template_delivery"/>
+    </record>
+
+    <!--Template Payment method-->
+    <template id="template_payment">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container"/>
+            </div>
+        </t>
+    </template>
+
+    <!-- Page Payment method -->
+    <record id="page_payment" model="website.page">
+        <field name="name">Payment method</field>
+        <field name="website_published">True</field>
+        <field name="website_ids" eval="[(6, 0, [ref('website_base_forestal.forestal_website')])]"/>
+        <field name="url">/page/payment</field>
+        <field name="view_id" ref="template_payment"/>
+    </record>
+
 </odoo>

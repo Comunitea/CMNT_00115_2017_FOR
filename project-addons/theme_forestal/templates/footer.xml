@@ -3,36 +3,19 @@
 
     <!-- Footer changes -->
     <template id="website_footer_default" inherit_id="website.footer_default">
+        <!--<xpath expr="//div[@id='footer']" position="before">
+            <div class="footer-background "/>
+        </xpath>-->
         <xpath expr="//div[@id='footer']/div[hasclass('row')]" position="replace">
             <div class="row">
-                <div class="col-md-4 col-lg-3">
-                    <h4>First column</h4>
+                <div class="col-md-4">
+                    <h4>About us</h4>
                     <ul class="list-unstyled">
-                        <li><a href="/">Line 1</a></li>
-                        <li><a href="/">Line 2</a></li>
-                        <li><a href="/">Line 3</a></li>
-                        <li><a href="/">Line 4</a></li>
+                        <li><a href="/page/who_we_are">Who We Are</a></li>
+                        <li><a href="/our_advantages">Our Advantages</a></li>
+                        <li><a href="/blog">Our blog</a></li>
                     </ul>
-                </div>
-                <div class="col-md-4 col-lg-3">
-                    <h4>Second column</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="/">Line 1</a></li>
-                        <li><a href="/">Line 2</a></li>
-                    </ul>
-                    <ul class="list-unstyled">
-                        <li t-ignore="true"><i class="fa fa-phone"/> <span t-field="res_company.phone"/></li>
-                        <li t-ignore="true"><i class="fa fa-envelope"/>  <span t-field="res_company.email"/></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 col-lg-5 col-lg-offset-1">
-                    <h4>Third column</h4>
-                    <div>
-                        <p>We are a team of passionate people whose goal is to improve everyone's
-                            life through disruptive products. We build great products to solve your
-                            business problems.</p>
-                    </div>
-                    <h2>
+                    <h2 class="mt4">
                         <a t-att-href="website.social_facebook" t-if="website.social_facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook-square"/></a>
                         <a t-att-href="website.social_twitter" t-if="website.social_twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter"/></a>
                         <a t-att-href="website.social_linkedin" t-if="website.social_linkedin" rel="nofollow" target="_blank"><i class="fa fa-linkedin"/></a>
@@ -40,6 +23,31 @@
                         <a t-att-href="website.social_googleplus" t-if="website.social_googleplus" rel="publisher" target="_blank"><i class="fa fa-google-plus-square"/></a>
                         <a t-att-href="website.social_github" t-if="website.social_github" rel="nofollow" target="_blank"><i class="fa fa-github"/></a>
                     </h2>
+                </div>
+                <div class="col-md-4">
+                    <h4>Information</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="/page/products">Products</a></li>
+                        <li><a href="/page/delivery">Delivery</a></li>
+                        <li><a href="/page/payment">Payment method</a></li>
+                        <li><a href="/contactus">Contactus</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Our company</h4>
+                    <ul class="list-unstyled">
+                        <li t-esc="res_company.name"/>
+                        <li>
+                            <i class="fa fa-map-marker"/>
+                            <a href="https://goo.gl/maps/hXsvvXYt56o" target="_blank" alt="Company Link" title="Company" rel="nofollow">
+                                <t t-esc="res_company.street"/>,
+                                <t t-esc="res_company.zip"/>,
+                                <t t-esc="res_company.city"/>
+                            </a>
+                        </li>
+                        <li><i class="fa fa-phone"/><a t-field="res_company.phone" t-att-href="'tel:%s' %res_company.phone"/></li>
+                        <li><i class="fa fa-envelope"/><a t-field="res_company.email" t-att-href="'mailto:%s' %res_company.email"/></li>
+                    </ul>
                 </div>
             </div>
         </xpath>
