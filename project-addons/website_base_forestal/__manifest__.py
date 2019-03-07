@@ -40,6 +40,7 @@
         'codecoupon_base',
         'breadcrumbs_base',
         'website_theme_install',
+        'website_blog_base',
     ],
     'data': [
         'data/company_data.xml',

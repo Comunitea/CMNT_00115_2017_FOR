@@ -16,7 +16,7 @@
                 <!--<field name="social_twitter"></field>-->
                 <!--<field name="social_facebook"></field>-->
                 <!--<field name="social_instagram"></field>-->
-                <!--<field name="social_linkedin"></field>-->
+                <field name="social_linkedin">https://es.linkedin.com/company/forestal-maderera-l.-c.-s.-l.</field>
                 <!--<field name="social_github"></field>-->
                 <!--<field name="social_googleplus"></field>-->
             </record>
