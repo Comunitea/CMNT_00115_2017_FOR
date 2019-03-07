@@ -11,7 +11,7 @@
                 <field name="domain">forestal</field>
                 <field name="company_id" ref="base.main_company"/>
                 <field name="user_id" ref="base.public_user"/>
-                <field name="homepage_id" ref="website.homepage_page"/>
+                <!--<field name="homepage_id" ref="website.homepage_page"/>-->
                 <field name="favicon" type="base64" file="website_base_forestal/static/img/favicon.png"/>
                 <!--<field name="social_twitter"></field>-->
                 <!--<field name="social_facebook"></field>-->
