@@ -25,6 +25,8 @@
 #
 ##############################################################################
 
+
+
 {
     'name': 'Theme Forestal',
     'version': '1.0',
@@ -54,10 +56,11 @@
         'templates/header.xml',
         'templates/breadcrumbs_bar.xml',
         'templates/404.xml',
-        'templates/page_home.xml',
-        'templates/page_aboutus.xml',
         'templates/product.xml',
         'templates/cart.xml',
+        'templates/page_home.xml',
+        'templates/page_who_we_are.xml',
+        'templates/page_our_advantages.xml',
     ],
     'images': [
         '/static/description/icon.png',
@@ -67,3 +70,4 @@
     'installable': True,
     'application': False,
 }
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- About us page -->
+    <template id="our_advantages_template" name="Our Advantages" inherit_id="theme_forestal.our_advantages">
+        <xpath expr="//div[@class='container']" position="inside">
+            <div class="container">
+                <section class="s_title mb32">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center">Nuestras Ventajas</h1>
+                                <h3 class="text-center text-muted">Principales ventajas del uso de la madera como material de construcción</h3>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_image mt32 mb32">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <img class="img img-responsive" src="/theme_forestal/static/img/sliders/slider_paisaje.jpg" alt="Sierra de Guadarrama"/>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_container mt32 mb32">
+                    <div class="row">
+                            <div class="col-md-12">
+                                <h3>Belleza y valor ambiental</h3>
+                                <p>
+                                    La madera absorbe agua y respira activamente, no se carga electroestáticamente
+                                    y es aislante térmico lo que ocasiona una temperatura superficial agradable en ambientes fríos.
+                                    Absorbe las ondas sonoras generando ambientes silenciosos que reducen el estrés.
+                                </p>
+                                <h3>Relación resistencia-peso</h3>
+                                <p>
+                                    Es superior a la del acero y mucho más alta que la del hormigón.
+                                </p>
+                                <h3>Material natural y renovable</h3>
+                                <p>
+                                    El proceso productivo requiere de un bajo consumo energético.
+                                </p>
+                                <h3>Resistencia al fuego</h3>
+                                <p>
+                                    NLa madera es un material combustible. No obstante, las estructuras de madera muestran
+                                    un excelente comportamiento ante incendios ya que se crea una capa exterior carbonizada
+                                    que mantiene las propiedades mecánicas del interior intactas.
+                                    El acero, en cambio, ante altas temperaturas pierde su estabilidad estructural.
+                                </p>
+                                <h3>Facilidad de trabajo</h3>
+                                <p>
+                                    Se puede cortar y ensamblar con sencillez reduciendo los tiempos de montaje.
+                                </p>
+                            </div>
+                        </div>
+                </section>
+                <section class="s_images mt32 mb32">
+                    <div class="row">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
+                                    <i class="fa fa-pagelines"/>
+                                </figure>
+                                <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
+                                    <i class="fa fa-check"/>
+                                </figure>
+                                <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
+                                    <i class="fa fa-leaf"/>
+                                </figure>
+                                <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
+                                    <i class="fa fa-fire"/>
+                                </figure>
+                                <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
+                                    <i class="fa fa-bars"/>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Snippets' area -->
+                <div class="oe_structure" />
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
