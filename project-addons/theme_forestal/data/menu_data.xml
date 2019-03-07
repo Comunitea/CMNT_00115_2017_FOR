@@ -23,37 +23,11 @@
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
 
-        <!-- About Us -->
-        <record id="menu_aboutus" model="website.menu">
-            <field name="name">About us</field>
-            <field name="sequence" type="int">30</field>
-            <field name="parent_id" ref="website.main_menu" />
-            <field name="website_id" ref="website_base_forestal.forestal_website"/>
-        </record>
-
-        <!-- About Us Submenu -->
-        <record id="aboutus_submenu_who" model="website.menu">
-            <field name="name">Who We Are</field>
-            <field name="url">/page/who_we_are</field>
-            <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
-            <field name="sequence" type="int">10</field>
-            <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
-        </record>
-        <record id="aboutus_submenu_advantage" model="website.menu">
-            <field name="name">Our Advantages</field>
-            <field name="url">/page/our_advantages</field>
-            <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
-            <field name="sequence" type="int">20</field>
-            <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
-        </record>
-
         <!-- Products -->
         <record id="menu_products" model="website.menu">
             <field name="name">Products</field>
             <field name="url">/page/products</field>
-            <field name="sequence" type="int">40</field>
+            <field name="sequence" type="int">30</field>
             <field name="parent_id" ref="website.main_menu" />
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
@@ -104,6 +78,32 @@
             <field name="url">/page/products#madera_en_rollo</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
             <field name="sequence" type="int">60</field>
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+            <field name="website_published">True</field>
+        </record>
+
+        <!-- About Us -->
+        <record id="menu_aboutus" model="website.menu">
+            <field name="name">About us</field>
+            <field name="sequence" type="int">80</field>
+            <field name="parent_id" ref="website.main_menu" />
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+        </record>
+
+        <!-- About Us Submenu -->
+        <record id="aboutus_submenu_who" model="website.menu">
+            <field name="name">Who We Are</field>
+            <field name="url">/page/who_we_are</field>
+            <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
+            <field name="sequence" type="int">10</field>
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+            <field name="website_published">True</field>
+        </record>
+        <record id="aboutus_submenu_advantage" model="website.menu">
+            <field name="name">Our Advantages</field>
+            <field name="url">/page/our_advantages</field>
+            <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
+            <field name="sequence" type="int">20</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
