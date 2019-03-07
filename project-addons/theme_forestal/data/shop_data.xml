@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
 
+        <!-- ======================================== Categories ====================================== -->
         <record id="demo_category_1" model="product.public.category">
             <field name="name">Viga Laminada Atrio</field>
             <field name="slug">viga-laminada-atrio</field>
@@ -57,6 +58,71 @@
             <field name="sequence">52</field>
         </record>
 
+        <!-- =================================== BRANDS ========================================== -->
+        <record id="product_brand_vigas" model="product.brand">
+            <field name="name">Vigas</field>
+            <field name="partner_id" ref="base.main_company"/>
+            <field name="description">Madera seca, de calidad y de grandes largos</field>
+            <field name="logo" type="base64" file="theme_forestal/static/img/product/Vigalaminada.jpg"/>
+        </record>
+
+        <record id="product_brand_listones" model="product.brand">
+            <field name="name">Listones</field>
+            <field name="partner_id" ref="base.main_company"/>
+            <field name="description">Madera seca, de calidad y de grandes largos</field>
+            <field name="logo" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
+        </record>
+
+        <record id="product_brand_tablones" model="product.brand">
+            <field name="name">Tablones</field>
+            <field name="partner_id" ref="base.main_company"/>
+            <field name="description">Madera seca, de calidad y de grandes largos</field>
+            <field name="logo" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
+        </record>
+
+        <record id="product_brand_tablas" model="product.brand">
+            <field name="name">Tablas</field>
+            <field name="partner_id" ref="base.main_company"/>
+            <field name="description">Madera seca, de calidad y de grandes largos</field>
+            <field name="logo" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
+        </record>
+
+        <record id="product_brand_tarimas" model="product.brand">
+            <field name="name">Tarimas</field>
+            <field name="partner_id" ref="base.main_company"/>
+            <field name="description">
+                Tarima maciza de pino silvestre con distintos perfiles y acabados para suelos
+                y techos entregándose el producto cepillado, tratado y pintado según gustos estéticos.
+            </field>
+            <field name="logo" type="base64" file="theme_forestal/static/img/product/Tarimafinger.jpg"/>
+        </record>
+
+        <record id="product_brand_tratamientos" model="product.brand">
+            <field name="name">Tratamientos</field>
+            <field name="partner_id" ref="base.main_company"/>
+            <field name="description">
+                La madera es un material orgánico y está sujeto a degradación por la acción de organismos vivos (hongos e insectos)
+                y agentes atmosféricos (sol y lluvia) dependiendo el efecto de muchos factores siendo el principal la humedad.
+            </field>
+            <!--<field name="logo" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>-->
+        </record>
+
+        <record id="product_brand_acabados" model="product.brand">
+            <field name="name">Acabados</field>
+            <field name="partner_id" ref="base.main_company"/>
+            <field name="description">Los productos pueden entregarse, si lo desea, con distintos acabados estéticos</field>
+            <!--<field name="logo" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>-->
+        </record>
+
+        <record id="product_brand_rollos" model="product.brand">
+            <field name="name">Rollos</field>
+            <field name="partner_id" ref="base.main_company"/>
+            <field name="description">Productos en madera maciza de uso estructural certificados con marcado CE</field>
+            <field name="logo" type="base64" file="theme_forestal/static/img/product/Maderaenrollo.jpg"/>
+        </record>
+
+        <!-- =================================== PRODUCTS ========================================== -->
+
         <!-- ==================================== Viga Laminada Atrio ========================================== -->
         <record id="demo_product_1" model="product.template">
             <field name="name">Viga Laminada Atrio 9x9x200</field>
@@ -67,6 +133,7 @@
             <field name="list_price">30</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_1')])]"/>
+            <field name="product_brand_id" ref="product_brand_vigas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -81,6 +148,7 @@
             <field name="list_price">35</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_1')])]"/>
+            <field name="product_brand_id" ref="product_brand_vigas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -95,6 +163,7 @@
             <field name="list_price">40</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_1')])]"/>
+            <field name="product_brand_id" ref="product_brand_vigas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -111,6 +180,7 @@
             <field name="list_price">30</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_2')])]"/>
+            <field name="product_brand_id" ref="product_brand_vigas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadaduo.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -125,6 +195,7 @@
             <field name="list_price">35</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_2')])]"/>
+            <field name="product_brand_id" ref="product_brand_vigas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadaduo.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -139,6 +210,7 @@
             <field name="list_price">40</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_2')])]"/>
+            <field name="product_brand_id" ref="product_brand_vigas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadaduo.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -155,6 +227,7 @@
             <field name="list_price">30</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_3')])]"/>
+            <field name="product_brand_id" ref="product_brand_tablones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -169,6 +242,7 @@
             <field name="list_price">35</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_3')])]"/>
+            <field name="product_brand_id" ref="product_brand_tablones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -183,6 +257,7 @@
             <field name="list_price">40</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_3')])]"/>
+            <field name="product_brand_id" ref="product_brand_tablones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -199,6 +274,7 @@
             <field name="list_price">30</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_4')])]"/>
+            <field name="product_brand_id" ref="product_brand_tablones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -213,6 +289,7 @@
             <field name="list_price">35</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_4')])]"/>
+            <field name="product_brand_id" ref="product_brand_tablones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -227,6 +304,7 @@
             <field name="list_price">40</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_4')])]"/>
+            <field name="product_brand_id" ref="product_brand_tablones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -243,6 +321,7 @@
             <field name="list_price">30</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_5')])]"/>
+            <field name="product_brand_id" ref="product_brand_tablas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablafinger.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -257,6 +336,7 @@
             <field name="list_price">35</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_5')])]"/>
+            <field name="product_brand_id" ref="product_brand_tablas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablafinger.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -271,6 +351,7 @@
             <field name="list_price">40</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_5')])]"/>
+            <field name="product_brand_id" ref="product_brand_tablas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablafinger.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -287,6 +368,7 @@
             <field name="list_price">30</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="product_brand_id" ref="product_brand_listones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -301,6 +383,7 @@
             <field name="list_price">35</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="product_brand_id" ref="product_brand_listones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -315,6 +398,7 @@
             <field name="list_price">40</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="product_brand_id" ref="product_brand_listones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -331,6 +415,7 @@
             <field name="list_price">30</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="product_brand_id" ref="product_brand_listones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -345,6 +430,7 @@
             <field name="list_price">35</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="product_brand_id" ref="product_brand_listones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>
@@ -359,6 +445,7 @@
             <field name="list_price">40</field>
             <field name="website_published">true</field>
             <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
+            <field name="product_brand_id" ref="product_brand_listones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
             <field name="height">9</field>
             <field name="width">9</field>

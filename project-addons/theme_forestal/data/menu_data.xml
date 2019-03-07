@@ -58,7 +58,7 @@
             <field name="website_published">True</field>
         </record>
         <record id="products_submenu_tarima" model="website.menu">
-            <field name="name">Madera Tarima</field>
+            <field name="name">Tarima</field>
             <field name="url">/page/products#tarima</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
             <field name="sequence" type="int">34</field>
@@ -88,6 +88,15 @@
             <field name="sequence" type="int">37</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
+        </record>
+
+        <!-- Menu in website for Brand -->
+        <record id="website_sale_product_brand.menu_website_sale_brand" model="website.menu">
+            <field name="name">Product Brands</field>
+            <field name="url">/page/product_brands</field>
+            <field name="sequence" type="int">40</field>
+            <field name="parent_id" ref="website.main_menu" />
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
 
         <!-- About Us -->

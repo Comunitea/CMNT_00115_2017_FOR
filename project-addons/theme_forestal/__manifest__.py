@@ -45,6 +45,7 @@
         'website_sale',
         'website_sale_options',
         'sale_volume',
+        'website_sale_product_brand',
     ],
     'data': [
         'templates/pages.xml',
