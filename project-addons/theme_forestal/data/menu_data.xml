@@ -131,5 +131,14 @@
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
 
+        <!-- Blog -->
+        <record id="website_blog.menu_news" model="website.menu">
+            <field name="name">Our Blog</field>
+            <field name="url">/blog</field>
+            <field name="sequence" type="int">95</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+        </record>
+
     </data>
 </odoo>
