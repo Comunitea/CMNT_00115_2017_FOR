@@ -37,7 +37,7 @@
             <field name="name">Viguería Finger</field>
             <field name="url">/page/products#vigueria_finger</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">10</field>
+            <field name="sequence" type="int">31</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
@@ -45,7 +45,7 @@
             <field name="name">Madera Aserrada</field>
             <field name="url">/page/products#madera_aserrada</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">20</field>
+            <field name="sequence" type="int">32</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
@@ -53,7 +53,7 @@
             <field name="name">Madera Laminada</field>
             <field name="url">/page/products#madera_laminada</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">30</field>
+            <field name="sequence" type="int">33</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
@@ -61,7 +61,7 @@
             <field name="name">Madera Tarima</field>
             <field name="url">/page/products#tarima</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">40</field>
+            <field name="sequence" type="int">34</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
@@ -69,7 +69,7 @@
             <field name="name">Tratamientos y Acabados</field>
             <field name="url">/page/products#tratamientos_y_acabados</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">50</field>
+            <field name="sequence" type="int">35</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
@@ -77,7 +77,7 @@
             <field name="name">Madera en Rollo</field>
             <field name="url">/page/products#madera_en_rollo</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">60</field>
+            <field name="sequence" type="int">36</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
@@ -95,7 +95,7 @@
             <field name="name">Who We Are</field>
             <field name="url">/page/who_we_are</field>
             <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
-            <field name="sequence" type="int">10</field>
+            <field name="sequence" type="int">81</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
@@ -103,7 +103,7 @@
             <field name="name">Our Advantages</field>
             <field name="url">/page/our_advantages</field>
             <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
-            <field name="sequence" type="int">20</field>
+            <field name="sequence" type="int">82</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
             <field name="website_published">True</field>
         </record>
