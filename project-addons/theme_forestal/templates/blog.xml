@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Blog page -->
+    <template id="website_blog_blog_post_short" inherit_id="website_blog.blog_post_short">
+
+        <!-- Add blog page bottom margin -->
+        <xpath expr="//div[@id='main_column']/.." position="attributes">
+            <attribute name="class" add="mb64" separator=" "/>
+        </xpath>
+
+        <!-- Add post image in blog page -->
+        <xpath expr="//h2[hasclass('o_blog_post_title')]" position="after">
+            <div class="mb8 mt8 o_blog_post_image" t-if="blog_post.image"
+                 t-attf-style="background: url(/web/image/blog.post/#{blog_post.id}/image) center / cover;"/>
+        </xpath>
+
+        <!-- Set new post short description -->
+        <xpath expr="//p[hasclass('o_blog_post_teaser')]" position="attributes">
+            <attribute name="t-field">blog_post.introduction</attribute>
+        </xpath>
+
+        <!-- Add "Read more" post link -->
+        <xpath expr="//p[hasclass('o_blog_post_teaser')]" position="after">
+            <a t-attf-href="/blog/#{ slug(blog_post.blog_id) }/post/#{ slug(blog_post) }"
+               class="btn btn-primary">
+                Read more <i class="fa fa-long-arrow-right"/>
+            </a>
+        </xpath>
+
+        <!-- Remove author data & number of views -->
+        <xpath expr="//div[@name='blog_post_data']" position="replace">
+            <div name="blog_post_data" class="mb0">
+                <span t-field="blog_post.post_date" t-options='{"format": "d MMMM yyyy"}'/>
+                <span t-if="not blog_post.website_published" class="label label-danger">unpublished</span>
+                <span class="fa fa-tags"/>
+                <!-- To display tags //no options -->
+                <t t-foreach="blog_post.tag_ids" t-as="one_tag">
+                    <a class="mr8" t-attf-href="#{blog_url(tag=one_tag.id, date_begin=False, date_end=False)}" t-esc="one_tag.name"/>
+                </t>
+                <div class="o_sharing_links">
+                    <a class="fa fa-twitter-square o_twitter"/>
+                    <a class="fa fa-facebook-square o_facebook"/>
+                    <a class="fa fa-linkedin-square o_linkedin"/>
+                    <a class="fa fa-google-plus-square o_google"/>
+                </div>
+                <hr/>
+            </div>
+        </xpath>
+
+    </template>
+
+    <!-- Post page -->
+    <template id="website_blog_blog_post_complete" inherit_id="website_blog.blog_post_complete">
+
+        <!-- Add class container to post title (max-width) -->
+        <xpath expr="//div[hasclass('blog_header')]" position="attributes">
+            <attribute name="class" add="container" separator=" "/>
+        </xpath>
+
+        <!-- Add post image -->
+        <xpath expr="//div[@id='blog_content']" position="replace">
+            <div id="blog_content" class="container">
+                <div class="row">
+                    <div class="col-md-12 mt8" t-if="blog_post.image">
+                        <img class="img-responsive" t-att-alt="blog_post.name" t-att-title="blog_post.name"
+                             t-attf-src="/web/image/blog.post/#{blog_post.id}/image" />
+                    </div>
+                    <div t-field="blog_post.content" class="blog_content mt32 col-md-12"/>
+                </div>
+            </div>
+        </xpath>
+
+    </template>
+
+</odoo>

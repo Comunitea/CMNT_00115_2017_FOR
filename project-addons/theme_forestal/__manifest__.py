@@ -59,6 +59,7 @@
         'templates/404.xml',
         'templates/product.xml',
         'templates/cart.xml',
+        'templates/blog.xml',
         'templates/page_home.xml',
         'templates/page_who_we_are.xml',
         'templates/page_our_advantages.xml',
