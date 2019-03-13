@@ -5,7 +5,9 @@ parts/
 lib/
 include/
 eggs/
+eggs*
 develop-eggs/
+eggs-custom/
 downloads/
 /data/
 etc/
@@ -22,4 +24,4 @@ atlassian-ide-plugin.xml
 devel_*
 devel-*
 .mr.developer.cfg
-eggs-custom/
+.vscode
