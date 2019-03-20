@@ -2,7 +2,7 @@
 <odoo>
 
     <template id="homepage_template" inherit_id="theme_forestal.homepage">
-        <xpath expr="//div[@class='container']" position="before">
+        <xpath expr="//div[hasclass('container')]" position="before">
             <!-- Slider section -->
             <div id="carousel_homepage" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -68,7 +68,7 @@
                 </a>
             </div>
         </xpath>
-        <xpath expr="//div[@class='container']" position="inside">
+        <xpath expr="//div[hasclass('container')]" position="inside">
             <section class="s_title mt32">
                 <div class="container">
                     <div class="row">

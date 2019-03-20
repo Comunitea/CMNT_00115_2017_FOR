@@ -2,7 +2,7 @@
 <odoo>
 
     <template id="product_price" inherit_id="website_sale.product_price">
-        <xpath expr="//h4[@class='hidden oe_not_available bg-warning']" position="before">
+        <xpath expr="//h4[hasclass('hidden', 'oe_not_available', 'bg-warning')]" position="before">
             <p>
                 Dimensión: <span t-esc="product.dimension"/>
             </p>
