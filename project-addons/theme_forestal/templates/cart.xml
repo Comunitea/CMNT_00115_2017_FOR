@@ -9,7 +9,15 @@
 
         <xpath expr="//tbody/tr/td[2]" position="after">
             <td class='text-center td-dimension'>
-                <span t-esc="product.dimension"/>
+                <t t-if="product.attribute_value_ids and len(product.attribute_value_ids) > 2">
+                    <span t-esc="product.attribute_value_ids[0].name +'x' +product.attribute_value_ids[1].name + 'x' + product.attribute_value_ids[2].name"/>
+                </t>
+                <t t-elif="product.attribute_value_ids and len(product.attribute_value_ids) > 1">
+                    <span t-esc="product.attribute_value_ids[0].name +'x' +product.attribute_value_ids[1].name"/>
+                </t>
+                <t t-else="">
+                    <span t-esc="'N/D'"/>
+                </t>
             </td>
         </xpath>
     </template>
@@ -22,7 +30,15 @@
 
         <xpath expr="//tbody/t/tr/td[3]" position="after">
             <td class='text-center td-dimension'>
-                <span t-esc="line.product_id.dimension"/>
+                <t t-if="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 2">
+                    <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + line.product_id.attribute_value_ids[2].name"/>
+                </t>
+                <t t-elif="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 1">
+                    <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name"/>
+                </t>
+                <t t-else="">
+                    <span t-esc="'N/D'"/>
+                </t>
             </td>
         </xpath>
     </template>
@@ -35,7 +51,15 @@
 
         <xpath expr="//tbody/tr/td[3]" position="after">
             <td class='text-center td-dimension'>
-                <span t-esc="line.product_id.dimension"/>
+                <t t-if="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 2">
+                    <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + line.product_id.attribute_value_ids[2].name"/>
+                </t>
+                <t t-elif="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 1">
+                    <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name"/>
+                </t>
+                <t t-else="">
+                    <span t-esc="'N/D'"/>
+                </t>
             </td>
         </xpath>
     </template>
@@ -48,7 +72,15 @@
 
         <xpath expr="//tbody/tr/td[2]" position="after">
             <td class='text-center td-dimension'>
-                <span t-esc="line.product_id.dimension"/>
+                <t t-if="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 2">
+                    <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + line.product_id.attribute_value_ids[2].name"/>
+                </t>
+                <t t-elif="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 1">
+                    <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name"/>
+                </t>
+                <t t-else="">
+                    <span t-esc="'N/D'"/>
+                </t>
             </td>
         </xpath>
     </template>

@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="product_price" inherit_id="website_sale.product_price">
-        <xpath expr="//h4[hasclass('hidden', 'oe_not_available', 'bg-warning')]" position="before">
-            <p>
-                Dimensión: <span t-esc="product.dimension"/>
+    <!--Show dimension variants in product details-->
+    <!--<template id="product_price" inherit_id="website_sale.product_price">-->
+        <!--<xpath expr="//h4[hasclass('hidden', 'oe_not_available', 'bg-warning')]" position="before">-->
+            <!--<p>-->
+                <!--Dimensión: <span t-esc="product.dimension"/>-->
+            <!--</p>-->
+        <!--</xpath>-->
+    <!--</template>-->
+
+    <!--Show single variants in product details-->
+    <template id="variants" inherit_id="website_sale.variants">
+        <xpath expr="//li[last()]" position="before">
+            <p t-if="len(variant_id.value_ids) == 1">
+                <strong t-esc="variant_id.attribute_id.name"/>:
+                <span t-esc="variant_id.value_ids[0].name"/>
             </p>
         </xpath>
     </template>

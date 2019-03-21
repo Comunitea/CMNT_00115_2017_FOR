@@ -30,7 +30,9 @@ class SaleOrder(models.Model):
     @api.multi
     def _website_product_id_change(self, order_id, product_id, qty=0):
         """
-        Only sets custom field product_uom_unit as same as product_uom_qty field for best clarity in backend orders.
+        Sets customs fields in backend orders.
+        escuadria, product_length and product_uom_unit as same as product_uom_qty field.
+
         """
         order = self.sudo().browse(order_id)
         product_context = dict(self.env.context)
@@ -49,12 +51,26 @@ class SaleOrder(models.Model):
                 pu = self.env['account.tax']._fix_tax_included_price_company(pu, product.taxes_id,
                                                                              order_line[0].tax_id, self.company_id)
 
+        # Dimensions depends product variants
+        height, width, length = '0', '0', '0'
+        if product.attribute_value_ids:
+            if len(product.attribute_value_ids) > 2:
+                height = product.attribute_value_ids[0].name
+                width = product.attribute_value_ids[1].name
+                length = product.attribute_value_ids[2].name
+            elif len(product.attribute_value_ids) > 1:
+                width = product.attribute_value_ids[0].name
+                length = product.attribute_value_ids[1].name
+
         return {
             'product_id': product_id,
             'product_uom_qty': qty,
-            # Set custom field
-            'product_uom_unit': qty,
             'order_id': order_id,
             'product_uom': product.uom_id.id,
             'price_unit': pu,
+            # Set custom field
+            'product_uom_unit': qty,
+            # Set dimension
+            'escuadria': height + 'x' + width,
+            'product_length': length,
         }
