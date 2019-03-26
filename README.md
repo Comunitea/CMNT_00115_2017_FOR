@@ -50,6 +50,11 @@ Executar bootstrap.
 ```
 $ sandbox/bin/python3.5 bootstrap.py -c [archivo_buildout]
 ```
+Forzando a version:
+
+```
+$sandbox/bin/python3 bootstrap.py --setuptools-version=40.8.0 -c devel-buildout.cfg
+```
 Se creará la siguiente estrucura de directorios
 
 ```bash
