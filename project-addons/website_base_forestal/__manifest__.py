@@ -41,6 +41,7 @@
         'breadcrumbs_base',
         'website_theme_install',
         'website_blog_base',
+        'payment_redsys',
     ],
     'data': [
         'data/company_data.xml',
