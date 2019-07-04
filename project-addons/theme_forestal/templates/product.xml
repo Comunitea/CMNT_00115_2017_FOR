@@ -12,7 +12,7 @@
         </xpath>
 
         <!-- Add set custom length to variants in select options-->
-        <xpath expr="//option[@t-value='value_id.id']" position="replace">
+        <xpath expr="//option" position="replace">
             <t t-if="value_id.name == '0'">
                 <option t-att-value="value_id.id">
                     <span>Establecer largo</span>
