@@ -26,10 +26,7 @@ odoo.define('theme_forestal.website_sale', function(require) {
     var weContext = require("web_editor.context");
     require('website_sale.website_sale');
 
-    $('.oe_website_sale #add_to_cart, .oe_website_sale #products_grid .a-submit')
-    .off('click')
-    .removeClass('a-submit')
-    .click(_.debounce(function (event) {
+    $('.oe_website_sale #add_to_cart, .oe_website_sale #products_grid .a-submit').off('click').removeClass('a-submit').click(_.debounce(function (event) {
         var $form = $(this).closest('form');
         var quantity = parseFloat($form.find('input[name="add_qty"]').val() || 1);
         var product_id = parseInt($form.find('input[type="hidden"][name="product_id"], input[type="radio"][name="product_id"]:checked').first().val(),10);
@@ -118,4 +115,37 @@ odoo.define('theme_forestal.website_sale', function(require) {
         return false;
     }, 200, true));
 
+    /* Set product length */
+    $('.oe_website_sale').each(function () {
+        var oe_website_sale = this;
+        var $input_length = $("input[name='custom_length']").filter(':checked')
+        var length = 0;
+
+        $input_length.on('change', 'input:checked', function () {
+                console.log('$input_length: ' + $(this).val())
+                length = $(this).val();
+            });
+
+        $(oe_website_sale).on('change', 'input.js_variant_change, select.js_variant_change, ul[data-attribute_value_ids]', function (ev) {
+            var $ul = $(ev.target).closest('.js_add_cart_variants');
+            var $parent = $ul.closest('.js_product');
+            var $product_id = $parent.find('.product_id').first();
+            var $input_radio = $parent.find("input.js_variant_change:radio, select.js_variant_change").filter(':checked')
+            var id = $input_radio.val()
+
+            console.log('$input_radio: ' + $input_radio.val())
+
+            if(id == 'on'){
+                console.log('$input_radio: ' + $input_radio.val())
+                console.log('$input_length: ' + $input_length.val())
+                console.log('$product_id: ' + $product_id.val())
+                console.log('length: ' + length)
+                $parent.removeClass("css_not_available");
+                if(length != 0){
+                    $parent.find("#add_to_cart").removeClass("disabled");
+                }
+
+            }
+        });
+    });
 });
