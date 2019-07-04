@@ -35,18 +35,16 @@
         'Rubén Seijas <ruben@comunitea.com>',
     ],
     'depends': [
-        'ecommerce_base',
         'seo_base',
+        'ecommerce_base',
         'codecoupon_base',
         'breadcrumbs_base',
-        'website_theme_install',
         'website_blog_base',
+        'website_sale_product_brand',
         'payment_redsys',
     ],
     'data': [
         'data/company_data.xml',
-        'data/menu_data.xml',
-        'data/page_data.xml',
         'data/website_data.xml',
     ],
     'images': [
