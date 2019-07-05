@@ -30,11 +30,13 @@ odoo.define('theme_forestal.website_sale', function(require) {
         var $form = $(this).closest('form');
         var quantity = parseFloat($form.find('input[name="add_qty"]').val() || 1);
         var product_id = parseInt($form.find('input[type="hidden"][name="product_id"], input[type="radio"][name="product_id"]:checked').first().val(),10);
+        var length = $("input[name='custom_length']").val() || 0
+        console.log(length);
         event.preventDefault();
         ajax.jsonRpc("/shop/modal", 'call', {
                 'product_id': product_id,
                 'kwargs': {
-                   'context': _.extend({'quantity': quantity}, weContext.get())
+                   'context': _.extend({'quantity': quantity, 'custom_length': length}, weContext.get())
                 },
             }).then(function (modal) {
                 var $modal = $(modal);
@@ -118,34 +120,48 @@ odoo.define('theme_forestal.website_sale', function(require) {
     /* Set product length */
     $('.oe_website_sale').each(function () {
         var oe_website_sale = this;
-        var $input_length = $("input[name='custom_length']").filter(':checked')
         var length = 0;
 
-        $input_length.on('change', 'input:checked', function () {
-                console.log('$input_length: ' + $(this).val())
-                length = $(this).val();
-            });
-
-        $(oe_website_sale).on('change', 'input.js_variant_change, select.js_variant_change, ul[data-attribute_value_ids]', function (ev) {
+        $(oe_website_sale).on('keyup', "label.control-label > input[name='custom_length'].active", function (ev) {
             var $ul = $(ev.target).closest('.js_add_cart_variants');
             var $parent = $ul.closest('.js_product');
-            var $product_id = $parent.find('.product_id').first();
-            var $input_radio = $parent.find("input.js_variant_change:radio, select.js_variant_change").filter(':checked')
-            var id = $input_radio.val()
+            var $add_button = $parent.find("#add_to_cart");
+            length = $("input[name='custom_length']").val();
 
-            console.log('$input_radio: ' + $input_radio.val())
 
-            if(id == 'on'){
-                console.log('$input_radio: ' + $input_radio.val())
-                console.log('$input_length: ' + $input_length.val())
-                console.log('$product_id: ' + $product_id.val())
-                console.log('length: ' + length)
-                $parent.removeClass("css_not_available");
-                if(length != 0){
-                    $parent.find("#add_to_cart").removeClass("disabled");
-                }
-
+            if(length != 0 && $add_button.hasClass('disabled')){
+                $add_button.parent().removeClass("css_not_available");
+                $add_button.removeClass("disabled");
+            } else if (length == 0 && !$add_button.addClass("disabled")) {
+                $add_button.parent().addClass("css_not_available");
+                $add_button.addClass("disabled");
             }
         });
+
+        $(oe_website_sale).on('change', 'input.js_variant_change, select.js_variant_change', function (ev) {
+
+            var $ul = $(ev.target).closest('.js_add_cart_variants');
+            var $parent = $ul.closest('.js_product');
+            var custom_active = false;
+
+            $parent.find('input.js_variant_change:checked').each(function () {
+                if($(this).siblings().first().is('input')) {
+                    custom_active = true;
+                }
+            });
+
+            var input_length = $("input[name='custom_length']");
+            
+            if (custom_active == true && input_length.hasClass('hidden')) {
+                input_length.removeClass('hidden');
+                input_length.addClass('active');
+            } else if(custom_active == false && input_length.hasClass('active')) {
+                input_length.removeClass('active');
+                input_length.addClass('hidden');
+            }
+            
+        });
     });
+
+
 });
