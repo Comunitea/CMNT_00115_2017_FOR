@@ -4,6 +4,7 @@
 
         <!-- Main menu -->
         <record id="website.main_menu" model="website.menu">
+            <field name="name">Menú Principal Forestal</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
 

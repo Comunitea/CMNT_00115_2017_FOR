@@ -64,14 +64,14 @@ class SaleOrder(models.Model):
                 width = product.attribute_value_ids[1].name
                 pprint(product.attribute_value_ids[2].name)
                 if product.attribute_value_ids[2].name == 0:
-                    length = product_context.get('custom_length', False)
+                    length = product_context.get('product_length', False)
                 else:
                     length = product.attribute_value_ids[2].name
             elif len(product.attribute_value_ids) > 1:
                 width = product.attribute_value_ids[0].name
                 pprint(product.attribute_value_ids[1].name)
                 if product.attribute_value_ids[1].name == 0:
-                    length = product_context.get('custom_length', False)
+                    length = product_context.get('product_length', False)
                 else:
                     length = product.attribute_value_ids[1].name
         
@@ -89,3 +89,14 @@ class SaleOrder(models.Model):
             'escuadria': height + 'x' + width,
             'product_length': length,
         }
+
+    @api.multi
+    def _cart_update(self, product_id=None, line_id=None, add_qty=0, set_qty=0, attributes=None, **kwargs):
+        """ Add product_length """
+        res = super(SaleOrder, self)._cart_update(product_id, line_id, add_qty, set_qty, attributes)
+        kw = kwargs.get('product_length', False)
+        if kw:
+            res.update({'product_length': kw})
+
+        import ipdb;ipdb.set_trace()
+        return res

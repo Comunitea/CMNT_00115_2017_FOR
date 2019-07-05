@@ -10,7 +10,7 @@
         <xpath expr="//tbody/tr/td[2]" position="after">
             <td class='text-center td-dimension'>
                 <t t-if="product.attribute_value_ids and len(product.attribute_value_ids) > 2">
-                    <span t-esc="product.attribute_value_ids[0].name +'x' +product.attribute_value_ids[1].name + 'x' + product.attribute_value_ids[2].name"/>
+                    <span t-esc="product.attribute_value_ids[0].name +'x' +product.attribute_value_ids[1].name + 'x' + request.env.context['product_length'] if request.env.context['product_length'] != 0 else product.attribute_value_ids[2].name"/>
                 </t>
                 <t t-elif="product.attribute_value_ids and len(product.attribute_value_ids) > 1">
                     <span t-esc="product.attribute_value_ids[0].name +'x' +product.attribute_value_ids[1].name"/>

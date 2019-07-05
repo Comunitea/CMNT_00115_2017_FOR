@@ -35,8 +35,9 @@ odoo.define('theme_forestal.website_sale', function(require) {
         event.preventDefault();
         ajax.jsonRpc("/shop/modal", 'call', {
                 'product_id': product_id,
+                'context': {'product_length': length},
                 'kwargs': {
-                   'context': _.extend({'quantity': quantity, 'custom_length': length}, weContext.get())
+                   'context': _.extend({'quantity': quantity,}, weContext.get())
                 },
             }).then(function (modal) {
                 var $modal = $(modal);

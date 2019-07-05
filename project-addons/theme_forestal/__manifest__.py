@@ -39,15 +39,11 @@
     'contributors': [
         'Pavel Smirnov <pavel@comunitea.com>',
         'Rubén Seijas <ruben@comunitea.com>',
+        'Vicente Gutiérrez, vicente@comunitea.com',
     ],
     'depends': [
         'website_base_forestal',
-        'website_sale',
-        'website_sale_options',
         'sale_volume',
-        'website_sale_product_brand',
-        'sale',
-        'account',
     ],
     'data': [
         'templates/pages.xml',
