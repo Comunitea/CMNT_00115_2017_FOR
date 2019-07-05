@@ -37,6 +37,7 @@ class SaleOrder(models.Model):
         """
         order = self.sudo().browse(order_id)
         product_context = dict(self.env.context)
+        pprint(self.env.context)
         custom_length = self.env.context.get('custom_length', False)
         pprint(custom_length)
         product_context.setdefault('lang', order.partner_id.lang)
