@@ -41,8 +41,8 @@
                         <input type="radio" t-att-class="'js_variant_change' if variant_id.attribute_id.create_variant else None"
                                t-att-checked="'checked' if not inc else None"
                                t-att-name="'attribute-%s-%s' % (product.id, variant_id.attribute_id.id)"
-                               t-att-value="0" style="vertical-align: top; margin-right: 10px;"/>
-                        <input type="number" min="0" max="600" step="5" t-att-name="custom_length" t-att-id="custom_length" t-att-value="0" placeholder="Establecer largo"/>
+                               t-att-value="value_id.id" style="vertical-align: top; margin-right: 10px;"/>
+                        <input type="number" min="0" max="600" step="5" class="hidden" name="custom_length" t-att-id="custom_length" t-att-value="0" placeholder="Establecer largo"/>
                     </t>
                     <t t-else="">
                         <input type="radio" t-att-class="'js_variant_change' if variant_id.attribute_id.create_variant else None"

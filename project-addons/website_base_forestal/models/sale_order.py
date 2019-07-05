@@ -22,6 +22,7 @@
 ##############################################################################
 
 from odoo import api, models
+from pprint import pprint
 
 
 class SaleOrder(models.Model):
@@ -36,6 +37,9 @@ class SaleOrder(models.Model):
         """
         order = self.sudo().browse(order_id)
         product_context = dict(self.env.context)
+        pprint(self.env.context)
+        custom_length = self.env.context.get('custom_length', False)
+        pprint(custom_length)
         product_context.setdefault('lang', order.partner_id.lang)
         product_context.update({
             'partner': order.partner_id.id,
@@ -54,13 +58,24 @@ class SaleOrder(models.Model):
         # Dimensions depends product variants
         height, width, length = '0', '0', '0'
         if product.attribute_value_ids:
+            pprint(product.attribute_value_ids)
             if len(product.attribute_value_ids) > 2:
                 height = product.attribute_value_ids[0].name
                 width = product.attribute_value_ids[1].name
-                length = product.attribute_value_ids[2].name
+                pprint(product.attribute_value_ids[2].name)
+                if product.attribute_value_ids[2].name == 0:
+                    length = product_context.get('custom_length', False)
+                else:
+                    length = product.attribute_value_ids[2].name
             elif len(product.attribute_value_ids) > 1:
                 width = product.attribute_value_ids[0].name
-                length = product.attribute_value_ids[1].name
+                pprint(product.attribute_value_ids[1].name)
+                if product.attribute_value_ids[1].name == 0:
+                    length = product_context.get('custom_length', False)
+                else:
+                    length = product.attribute_value_ids[1].name
+        
+        pprint(length)
 
         return {
             'product_id': product_id,
