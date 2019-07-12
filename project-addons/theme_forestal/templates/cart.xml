@@ -10,7 +10,7 @@
         <xpath expr="//tbody/tr/td[2]" position="after">
             <td class='text-center td-dimension'>
                 <t t-if="product.attribute_value_ids and len(product.attribute_value_ids) > 2">
-                    <span t-esc="product.attribute_value_ids[0].name +'x' +product.attribute_value_ids[1].name + 'x' + request.env.context['product_length'] if request.env.context['product_length'] != 0 else product.attribute_value_ids[2].name"/>
+                    <span t-esc="product.attribute_value_ids[0].name +'x' +product.attribute_value_ids[1].name + 'x' + (request.env.context['product_length'] if request.env.context['product_length'] != 0 else product.attribute_value_ids[2].name)"/>
                 </t>
                 <t t-elif="product.attribute_value_ids and len(product.attribute_value_ids) > 1">
                     <span t-esc="product.attribute_value_ids[0].name +'x' +product.attribute_value_ids[1].name"/>
@@ -30,14 +30,44 @@
 
         <xpath expr="//tbody/t/tr/td[3]" position="after">
             <td class='text-center td-dimension'>
+                
                 <t t-if="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 2">
-                    <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + line.product_id.attribute_value_ids[2].name"/>
+                    <t t-if="line.product_uom_unit != product_uom_qty">
+                        <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + (str(int(line.product_length*1000)) if line.product_length &lt; 100 else str(int(line.product_length)))"/>
+                    </t>
+                    <t t-else="">
+                        <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + line.product_id.attribute_value_ids[2].name"/>
+                    </t>
                 </t>
                 <t t-elif="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 1">
                     <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name"/>
                 </t>
                 <t t-else="">
                     <span t-esc="'N/D'"/>
+                </t>
+            </td>
+        </xpath>
+
+        <xpath expr="//td[hasclass('td-qty')]/div[hasclass('css_quantity')]/input[hasclass('quantity')]" position="replace">
+            <t t-if="line.product_uom_unit != line.product_uom_qty">
+                <input type="text" name="product_uom_unit" class="js_quantity form-control quantity product_uom_unit" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_unit)" />
+            </t>
+            <t t-else="">
+                <input type="text" class="js_quantity form-control quantity" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
+            </t>
+        </xpath>
+
+        <xpath expr="//td[hasclass('td-price')]" position="replace">
+            <td class="text-center td-price" name="price">
+                <t t-if="line.product_uom_unit != product_uom_qty">
+                    <span t-field="line.price_subtotal" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" />
+                </t>
+                <t t-else="">
+                    <t t-if="(compute_currency(line.product_id.lst_price) - line.price_reduce ) &gt; 0.01  and website.get_current_pricelist().discount_policy=='without_discount'">
+                        <del t-attf-class="#{'text-danger mr8'}" style="white-space: nowrap;" t-esc="compute_currency(line.product_id.website_public_price)" t-options="{'widget': 'monetary', 'display_currency': website.get_current_pricelist().currency_id, 'from_currency': website.currency_id}" />
+                    </t>
+                    <span t-field="line.price_reduce_taxexcl" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" groups="sale.group_show_price_subtotal" />
+                    <span t-field="line.price_reduce_taxinc" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" groups="sale.group_show_price_total" />
                 </t>
             </td>
         </xpath>
@@ -52,13 +82,39 @@
         <xpath expr="//tbody/tr/td[3]" position="after">
             <td class='text-center td-dimension'>
                 <t t-if="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 2">
-                    <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + line.product_id.attribute_value_ids[2].name"/>
+                    <t t-if="line.product_uom_unit != product_uom_qty">
+                        <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + (str(int(line.product_length*1000)) if line.product_length &lt; 100 else str(int(line.product_length)))"/>
+                    </t>
+                    <t t-else="">
+                        <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + line.product_id.attribute_value_ids[2].name"/>
+                    </t>
                 </t>
                 <t t-elif="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 1">
                     <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name"/>
                 </t>
                 <t t-else="">
                     <span t-esc="'N/D'"/>
+                </t>
+            </td>
+        </xpath>
+
+        <xpath expr="//td[hasclass('td-qty')]/div" position="replace">
+            <t t-if="line.product_uom_unit != line.product_uom_qty">
+                <div t-esc="int(line.product_uom_unit) == line.product_uom_unit and int(line.product_uom_unit) or line.product_uom_unit" />
+            </t>
+            <t t-else="">
+                <div t-esc="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
+            </t>
+        </xpath>
+
+        <xpath expr="//td[hasclass('td-price')]" position="replace">
+            <td class="text-center td-price" name="price">
+                <t t-if="line.product_uom_unit != product_uom_qty">
+                    <span t-field="line.price_subtotal" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" />
+                </t>
+                <t t-else="">
+                    <span t-field="line.price_reduce_taxexcl" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" groups="sale.group_show_price_subtotal" />
+                    <span t-field="line.price_reduce_taxinc" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" groups="sale.group_show_price_total" />
                 </t>
             </td>
         </xpath>
@@ -73,13 +129,49 @@
         <xpath expr="//tbody/tr/td[2]" position="after">
             <td class='text-center td-dimension'>
                 <t t-if="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 2">
-                    <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + line.product_id.attribute_value_ids[2].name"/>
+                    <t t-if="line.product_uom_unit != product_uom_qty">
+                        <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + (str(int(line.product_length*1000)) if line.product_length &lt; 100 else str(int(line.product_length)))"/>
+                    </t>
+                    <t t-else="">
+                        <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name + 'x' + line.product_id.attribute_value_ids[2].name"/>
+                    </t>
                 </t>
                 <t t-elif="line.product_id.attribute_value_ids and len(line.product_id.attribute_value_ids) > 1">
                     <span t-esc="line.product_id.attribute_value_ids[0].name +'x' +line.product_id.attribute_value_ids[1].name"/>
                 </t>
                 <t t-else="">
                     <span t-esc="'N/D'"/>
+                </t>
+            </td>
+        </xpath>
+
+        <xpath expr="//td[hasclass('td-qty')]/div" position="replace">
+            <t t-if="line.product_uom_unit != line.product_uom_qty">
+                <div id="quote_qty">
+                    <span t-esc="int(line.product_uom_unit) == line.product_uom_unit and int(line.product_uom_unit) or line.product_uom_unit"/>
+                    <span class='hidden-xs' t-field="line.product_uom" groups="product.group_uom"/>
+                </div>
+            </t>
+            <t t-else="">
+                <div id="quote_qty">
+                    <span t-esc="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty"/>
+                    <span class='hidden-xs' t-field="line.product_uom" groups="product.group_uom"/>
+                </div>
+            </t>
+        </xpath>
+
+        <xpath expr="//td[hasclass('td-price')]" position="replace">
+            <td class="text-center td-price" name="price">
+                <t t-if="line.product_uom_unit != product_uom_qty">
+                    <span t-field="line.price_subtotal" style="white-space: nowrap;" t-options='{"widget": "monetary", "display_currency": order.pricelist_id.currency_id}'/>
+                </t>
+                <t t-else="">
+                    <td class='td-price'>
+                        <span class="text-right">
+                            <div t-field="line.price_unit"
+                                t-options='{"widget": "monetary", "display_currency": order.pricelist_id.currency_id}'/>
+                        </span>
+                    </td>
                 </t>
             </td>
         </xpath>

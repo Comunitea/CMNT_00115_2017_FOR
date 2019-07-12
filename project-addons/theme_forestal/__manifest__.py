@@ -44,6 +44,7 @@
     'depends': [
         'website_base_forestal',
         'sale_volume',
+        'website_sale',
     ],
     'data': [
         'templates/pages.xml',
