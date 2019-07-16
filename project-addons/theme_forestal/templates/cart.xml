@@ -24,6 +24,10 @@
 
     <!--Includes Dimensión to cart in review order-->
     <template id="website_sale_cart_lines" inherit_id="website_sale.cart_lines">
+        <xpath expr="//tbody/tr/td[hasclass('td-product_name')]/div/a/strong" position="replace">
+            <strong t-field="line.name"/>
+        </xpath>
+
         <xpath expr="//thead/tr/th[2]" position="after">
             <th class="text-center td-dimension">Dimensión</th>
         </xpath>
@@ -48,16 +52,36 @@
             </td>
         </xpath>
 
-        <xpath expr="//td[hasclass('td-qty')]/div[hasclass('css_quantity')]/input[hasclass('quantity')]" position="replace">
-            <t t-if="line.product_uom_unit != line.product_uom_qty">
-                <input type="text" name="product_uom_unit" class="js_quantity form-control quantity product_uom_unit" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_unit)" />
-            </t>
-            <t t-else="">
-                <input type="text" class="js_quantity form-control quantity" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
-            </t>
+        <xpath expr="//td[hasclass('td-qty')]" position="replace">
+
+            <td class="text-center td-qty">
+                <div class="css_quantity input-group oe_website_spinner">
+                    
+                    <t t-if="line.product_uom_unit != line.product_uom_qty">
+                        <a t-attf-href="#" class="mb8 input-group-addon js_add_cart_json hidden-xs product_uom_unit_add">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                        <input type="text" name="product_uom_unit" class="js_quantity form-control quantity product_uom_unit" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_unit)" />
+                        <a t-attf-href="#" class="mb8 input-group-addon float_left js_add_cart_json hidden-xs product_uom_unit_add">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </t>
+                    <t t-else="">
+                        <a t-attf-href="#" class="mb8 input-group-addon js_add_cart_json hidden-xs">
+                            <i class="fa fa-minus"></i>
+                        </a>
+                        <input type="text" class="js_quantity form-control quantity" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
+                        <a t-attf-href="#" class="mb8 input-group-addon float_left js_add_cart_json hidden-xs">
+                            <i class="fa fa-plus"></i>
+                        </a>
+                    </t>
+
+                </div>
+            </td>
         </xpath>
 
         <xpath expr="//td[hasclass('td-price')]" position="replace">
+
             <td class="text-center td-price" name="price">
                 <t t-if="line.product_uom_unit != product_uom_qty">
                     <span t-field="line.price_subtotal" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'from_currency': website_sale_order.pricelist_id.currency_id, 'display_currency': website.currency_id}" />
@@ -75,6 +99,10 @@
 
     <!--Includes Dimensión to cart in order payment-->
     <template id="website_sale_cart_payment" inherit_id="website_sale.payment">
+        <xpath expr="//tbody/tr/td[hasclass('td-product_name')]/div/strong" position="replace">
+            <strong t-field="line.name"/>
+        </xpath>
+
         <xpath expr="//thead/tr/th[2]" position="after">
             <th class="text-center td-dimension">Dimensión</th>
         </xpath>
@@ -122,6 +150,10 @@
 
     <!--Includes Dimensión to cart in order confirmation-->
     <template id="website_sale_cart_confirmation" inherit_id="website_sale.confirmation">
+        <xpath expr="//tbody/tr/td[hasclass('td-product_name')]/div/a/strong" position="replace">
+            <strong t-field="line.name"/>
+        </xpath>
+
         <xpath expr="//thead/tr/th[2]" position="after">
             <th class="text-center td-dimension">Dimensión</th>
         </xpath>
@@ -174,6 +206,16 @@
                     </td>
                 </t>
             </td>
+        </xpath>
+    </template>
+
+    <template id="cart_popover_custom_length" inherit_id="website_sale.cart_popover">
+        <xpath expr="//div[hasclass('cart_line')]/div/small" position="replace">
+            <small>Qty: <t t-esc="int(line.product_uom_unit) == line.product_uom_unit and int(line.product_uom_unit) or line.product_uom_unit" /></small>
+        </xpath>
+
+        <xpath expr="//div[hasclass('cart_line')]/div/a/span" position="replace">
+            <span t-esc="line.name" class="h6" />
         </xpath>
     </template>
 

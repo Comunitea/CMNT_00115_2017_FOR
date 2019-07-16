@@ -122,24 +122,23 @@ odoo.define('theme_forestal.website_sale', function(require) {
 
     $('.oe_website_sale').on('keyup', "label.control-label > input[name='custom_length'].active", function (ev) {
         var $add_button = $("#add_to_cart");
-        length = $("input[name='custom_length']").val();
+        var length = $("input[name='custom_length']").val();
 
-
-        if(length != false && $add_button.hasClass('disabled')){
-            $add_button.parent().removeClass("css_not_available");
-            $add_button.removeClass("disabled");
-        } else if (length == false && !$add_button.hasClass("disabled")) {
+        if (length.length == 0) {
             $add_button.parent().addClass("css_not_available");
             $add_button.addClass("disabled");
+        } else {
+            $add_button.parent().removeClass("css_not_available");
+            $add_button.removeClass("disabled");
         }
+
     });
 
-    $('.oe_website_sale').on('change', 'input.js_variant_change, select.js_variant_change', function (ev) {
+    $('.oe_website_sale').on('change', 'input.js_variant_change, select.js_variant_change, ul[data-attribute_value_ids]', function (ev) {
 
         var $ul = $(ev.target).closest('.js_add_cart_variants');
         var $parent = $ul.closest('.js_product');
-        var custom_active = false;
-        var toogle_add_btt = false;
+        var custom_active = false;        
 
         $parent.find('input.js_variant_change:checked').each(function () {
             if($(this).siblings().last().is('input')) {
@@ -155,20 +154,19 @@ odoo.define('theme_forestal.website_sale', function(require) {
 
         var input_length = $("input[name='custom_length']");
 
-        function masiveToogling() {
+        function masive_toogling() {
 
             input_length.toggleClass('hidden form-control mt16', !custom_active);
             input_length.toggleClass('active form-control mt16', custom_active);
-            input_length.val(false);
-            if (input_length.val() != '' || input_length.val() != false) {
-                toogle_add_btt = false;
+            
+            if (custom_active == true) {
+                input_length.trigger('keyup');
+            } else {
+                input_length.val(false);
             }
-    
-            $("#add_to_cart").toggleClass('disabled', !toogle_add_btt);
-            $("#add_to_cart").parent().toggleClass('css_not_available', !toogle_add_btt);
         }
         
-        masiveToogling();
+        masive_toogling();
         
     });
 
@@ -246,6 +244,35 @@ odoo.define('theme_forestal.website_sale', function(require) {
             }
         });
         }, 500);
+    });
+
+    // hack to add and remove from cart with json
+    $('.oe_website_sale').off('click', 'a.js_add_cart_json').on('click', 'a.js_add_cart_json', function (ev) {
+        if ($('body').hasClass('editor_enable')) {
+            return;
+        }
+        ev.preventDefault();
+        var $link = $(ev.currentTarget);
+        var $input = $link.parent().find("input");
+        var product_id = +$input.closest('*:has(input[name="product_id"])').find('input[name="product_id"]').val();
+        var min = parseFloat($input.data("min") || 0);
+        var max = parseFloat($input.data("max") || Infinity);
+        var quantity = ($link.has(".fa-minus").length ? -1 : 1) + parseFloat($input.val() || 0, 10);
+        var new_qty = quantity > min ? (quantity < max ? quantity : max) : min;
+
+        // If there is any product with custom length
+        var is_custom_length = $link.hasClass("product_uom_unit_add");
+        if (is_custom_length) {
+            $('input[data-line-id="'+$input.data("line-id")+'"]').val(new_qty).change();
+            return false;
+        }        
+
+        // if they are more of one input for this product (eg: option modal)
+        $('input[name="'+$input.attr("name")+'"]').add($input).filter(function () {
+            var $prod = $(this).closest('*:has(input[name="product_id"])');
+            return !$prod.length || +$prod.find('input[name="product_id"]').val() === product_id;
+        }).val(new_qty).change();
+        return false;
     });
 
 });

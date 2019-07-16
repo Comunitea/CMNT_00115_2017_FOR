@@ -77,7 +77,6 @@ class SaleOrder(models.Model):
         if product_length:
             return {
                 'product_id': product_id,
-                'product_uom_qty': 0,
                 'order_id': order_id,
                 'product_uom': product.uom_id.id,
                 'price_unit': pu,
@@ -106,6 +105,7 @@ class SaleOrder(models.Model):
         ctx = self.env.context.copy()
         length = self.env.context.get('product_length', False)
         product_uom_unit = False
+        original_p_uom_unit = False
         if attributes:
             length = attributes.get('product_length', False)
             
@@ -117,22 +117,28 @@ class SaleOrder(models.Model):
         if length and length != '0':
                 ctx['product_length'] = length
         
+        if length and not line_id:
+            possible_lines = self.order_line.search([('product_id', '=', product_id), ('product_length', '=', int(length)/1000)])
+            original_p_uom_unit = possible_lines[0].product_uom_unit if possible_lines and possible_lines[0] else False        
+
         res = super(SaleOrder, self.with_context(ctx))._cart_update(product_id, line_id, add_qty, set_qty)
+        
+        add_qty = int(add_qty) or add_qty if add_qty else False
         if res and res['quantity'] != 0 and length and length != '0':
             line_obj_res = self.env['sale.order.line'].browse(res['line_id'])
-            if add_qty != 0 and add_qty != res['quantity']:
+            if add_qty != 0 and set_qty == 0 and add_qty != res['quantity']:
                 line_obj_res.update({
-                    'product_uom_unit': add_qty
+                    'product_uom_unit': original_p_uom_unit + add_qty if original_p_uom_unit else add_qty
                 })
             elif set_qty != 0 and line_obj_res.product_uom_unit == 0:
                 line_obj_res.update({
                     'product_uom_unit': set_qty
                 })
-            elif product_uom_unit != res['quantity']:
+            elif product_uom_unit and product_uom_unit != res['quantity']:
                 line_obj_res.update({
                     'product_uom_unit': product_uom_unit
                 })
-            line_obj_res._compute_product_uom_qty()
+            line_obj_res._compute_product_uom_qty() 
         return res
 
     @api.multi
@@ -172,13 +178,11 @@ class SaleOrder(models.Model):
         
         lines = super(SaleOrder, self)._cart_find_product_line(product_id, line_id)
 
-        import ipdb; ipdb.set_trace()
-
         product_length = self.env.context.get('product_length', False)
-        if not line_id and product_length:
-            for order_line in self.website_order_line:
-                if int(order_line.product_length) == int(product_length) / 1000:
-                    return lines
-                else:
-                    return False
+        if product_length and not line_id:
+            lines = lines.search([('product_length', '=', int(product_length)/1000)])
+        elif line_id and product_length:
+            lines = lines.search([('id', '=', line_id)])
+            
+        return lines
             

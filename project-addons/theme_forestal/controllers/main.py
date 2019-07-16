@@ -41,7 +41,6 @@ class WebsiteSaleExtended(WebsiteSale):
             value = order.with_context(ctx)._cart_update(product_id=product_id, line_id=line_id, add_qty=add_qty, set_qty=set_qty)
 
             if not order.cart_quantity:
-                pprint("magia")
                 request.website.sale_reset()
                 return value
 
