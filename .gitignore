@@ -24,4 +24,10 @@ atlassian-ide-plugin.xml
 devel_*
 devel-*
 .mr.developer.cfg
+<<<<<<< HEAD
 .vscode
+=======
+eggs-custom/
+.vscode/
+
+>>>>>>> 11.0-CE
