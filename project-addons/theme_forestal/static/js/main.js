@@ -25,6 +25,7 @@ odoo.define('theme_forestal.website_sale', function(require) {
     require('web.dom_ready');
     var weContext = require("web_editor.context");
     require('website_sale.website_sale');
+    require('seo_base.website_sale');
 
     $('.oe_website_sale #add_to_cart, .oe_website_sale #products_grid .a-submit').off('click').removeClass('a-submit').click(_.debounce(function (event) {
         var $form = $(this).closest('form');

@@ -13,7 +13,7 @@
 
         <!-- Add set custom length to variants in select options-->
         <xpath expr="//option" position="replace">
-            <t t-if="value_id.name == '0'">
+            <t t-if="value_id.name == 'Personalizado'">
                 <option t-att-value="value_id.id" name="custom_option">
                     <span>Establecer largo</span>
                 </option>
@@ -36,7 +36,7 @@
 
         <xpath expr="//select" position="after">
             <t t-foreach="variant_id.value_ids" t-as="value_id">
-                <t t-if="value_id.name == '0'">
+                <t t-if="value_id.name == 'Personalizado'">
                     <input type="number" min="0" max="600" step="5" class="hidden form-control" name="custom_length" t-att-id="custom_length" t-att-value="0" placeholder="Establecer largo"/>
                 </t>
             </t>
@@ -46,7 +46,7 @@
         <xpath expr="//li[@class='form-group js_attribute_value']" position="replace">
             <li class="form-group js_attribute_value" style="margin: 0;">
                 <label class="control-label" style="margin: 0 20px;">
-                    <t t-if="value_id.name == '0'">
+                    <t t-if="value_id.name == 'Personalizado'">
                         <input type="radio" t-att-class="'js_variant_change' if variant_id.attribute_id.create_variant else None"
                                t-att-checked="'checked' if not inc else None"
                                t-att-name="'attribute-%s-%s' % (product.id, variant_id.attribute_id.id)"

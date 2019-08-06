@@ -5,15 +5,8 @@ from werkzeug.exceptions import Forbidden, NotFound
 
 from odoo import http, tools, _
 from odoo.http import request
-from odoo.addons.base.ir.ir_qweb.fields import nl2br
-from odoo.addons.http_routing.models.ir_http import slug
-from odoo.addons.website.controllers.main import QueryURL
-from odoo.exceptions import ValidationError
 from odoo.addons.website.controllers.main import Website
-from odoo.addons.website_form.controllers.main import WebsiteForm
-from odoo.osv import expression
 from odoo.addons.website_sale.controllers.main import WebsiteSale
-from odoo.addons.website_sale_options.controllers.main import WebsiteSaleOptions
 from pprint import pprint
 
 _logger = logging.getLogger(__name__)
