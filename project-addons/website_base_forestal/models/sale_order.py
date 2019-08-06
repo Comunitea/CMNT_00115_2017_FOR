@@ -38,7 +38,7 @@ class SaleOrder(models.Model):
         order = self.sudo().browse(order_id)
         product_context = dict(self.env.context)
         product_length = self.env.context.get('product_length', False)
-        if product_length and product_length != 'Personalizado':
+        if product_length and product_length != '0':
             product_length = float(product_length)/1000
         else:
             product_length = False
@@ -58,7 +58,7 @@ class SaleOrder(models.Model):
                 order_line[0].tax_id, self.company_id)
 
         # Dimensions depends product variants
-        height, width, length = 'Personalizado', 'Personalizado', 'Personalizado'
+        height, width, length = '0', '0', '0'
         if product.attribute_value_ids:
             if len(product.attribute_value_ids) > 2:
                 height = product.attribute_value_ids[0].name
@@ -114,7 +114,7 @@ class SaleOrder(models.Model):
             length = line_obj.product_length * 1000 if line_obj.product_uom_unit != line_obj.product_uom_qty else False
             product_uom_unit = line_obj.product_uom_unit if length and add_qty == 0 and set_qty == 0 else False
 
-        if length and length != 'Personalizado':
+        if length and length != '0':
                 ctx['product_length'] = length
         if length and not line_id:
             possible_lines = self.order_line.search([('product_id', '=', product_id), ('product_length', '=', int(length)/1000)])
@@ -122,7 +122,7 @@ class SaleOrder(models.Model):
 
         res = super(SaleOrder, self.with_context(ctx))._cart_update(product_id, line_id, add_qty, set_qty)
         add_qty = int(add_qty) or add_qty if add_qty else False
-        if res and res['quantity'] != 0 and length and length != 'Personalizado':
+        if res and res['quantity'] != 0 and length and length != '0':
             line_obj_res = self.env['sale.order.line'].browse(res['line_id'])
             if add_qty != 0 and set_qty == 0 and add_qty != res['quantity']:
                 line_obj_res.update({
@@ -146,8 +146,8 @@ class SaleOrder(models.Model):
 
         product_context = dict(self.env.context)
         product_length = self.env.context.get('product_length', False)
-        if product_length and product_length != 'Personalizado':
-            res = res.replace('Personalizado', str(product_length))
+        if product_length and product_length != '0':
+            res = res.replace('0', str(product_length))
         return res
 
     def get_product_length(self, line_id):
