@@ -23,7 +23,6 @@
 
 from odoo import api, models
 
-
 class SaleOrder(models.Model):
     _inherit = "sale.order"
 
@@ -39,6 +38,7 @@ class SaleOrder(models.Model):
         product_context = dict(self.env.context)
         product_length = self.env.context.get('product_length', False)
         if product_length and product_length != '0':
+            product_length_str = str(int(product_length))
             product_length = float(product_length)/1000
         else:
             product_length = False
@@ -83,7 +83,7 @@ class SaleOrder(models.Model):
                 # Set custom field
                 'product_uom_unit': qty,
                 # Set dimension
-                'escuadria': height + 'x' + width,
+                'escuadria': height + 'x' + width + 'x' + product_length_str,
                 'product_length': length,
             }
         return {
@@ -136,7 +136,7 @@ class SaleOrder(models.Model):
                 line_obj_res.update({
                     'product_uom_unit': product_uom_unit
                 })
-            line_obj_res._compute_product_uom_qty() 
+            line_obj_res._compute_product_uom_qty_cart(custom_length=True) 
         return res
 
     @api.multi
@@ -158,7 +158,7 @@ class SaleOrder(models.Model):
     def check_custom_length(self, line_id):
         is_custom_length = False
         line_obj = self.env['sale.order.line'].browse(line_id)
-        if line_obj.product_uom_unit != line_obj.product_uom_qty:
+        if line_obj.escuadria.count('x') == 2:
             is_custom_length = True
         
         return is_custom_length
@@ -183,4 +183,30 @@ class SaleOrder(models.Model):
             lines = lines.search([('id', '=', line_id)])
             
         return lines
-            
+
+class SaleOrderLine(models.Model):
+    _inherit = 'sale.order.line'
+
+    @api.onchange('product_uom_unit', 'escuadria', 'product_length')
+    def _compute_product_uom_qty_cart(self, custom_length=False):
+
+        if custom_length:
+            for line in self:
+                if not line.escuadria and not line.product_length:
+                    line.product_uom_qty = line.product_uom_unit
+                elif not line.escuadria and line.product_length:
+                    line.product_uom_qty = line.product_uom_unit * \
+                        line.product_length
+                elif not line.product_length:
+                    # Puede haber casos en los que se establezca escuadria pero no longitud
+                    pass
+                else:
+                    if line.escuadria.find('x') != -1 or line.escuadria.find(
+                            'X') != -1:
+                        line.product_uom_qty = line.product_uom_unit * \
+                            line.escuadria_float / 10000 * line.product_length
+                    else:
+                        line.product_uom_qty = line.product_uom_unit * \
+                            line.escuadria_float / 100 * line.product_length
+        else:
+            super(SaleOrderLine, self)._compute_product_uom_qty()           

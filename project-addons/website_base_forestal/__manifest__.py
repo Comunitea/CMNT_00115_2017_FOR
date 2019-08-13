@@ -42,6 +42,7 @@
         'website_blog_base',
         'website_sale_product_brand',
         'payment_redsys',
+        'sale_volume',
     ],
     'data': [
         'data/company_data.xml',
