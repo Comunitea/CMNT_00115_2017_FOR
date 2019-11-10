@@ -3,7 +3,7 @@
 
     <!-- About us page -->
     <template id="products_template" name="Who We Are" inherit_id="theme_forestal.products">
-        <xpath expr="//div[@class='container']" position="inside">
+        <xpath expr="//div[hasclass('container')]" position="inside">
             <div class="container">
 
                 <section class="s_title mt32" id="products">

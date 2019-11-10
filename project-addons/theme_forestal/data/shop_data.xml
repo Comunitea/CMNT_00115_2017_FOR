@@ -1,61 +1,60 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!-- ======================================== Categories ====================================== -->
-        <record id="demo_category_1" model="product.public.category">
-            <field name="name">Viga Laminada Atrio</field>
-            <field name="slug">viga-laminada-atrio</field>
+        <record id="demo_category_viga_laminada" model="product.public.category">
+            <field name="name">Viga Laminada</field>
+            <field name="slug">viga-laminada</field>
             <field name="sequence">10</field>
         </record>
-        <record id="demo_category_2" model="product.public.category">
-            <field name="name">Viga Laminada Duo</field>
-            <field name="slug">viga-laminada-duo</field>
-            <field name="sequence">11</field>
-        </record>
 
-        <record id="demo_category_3" model="product.public.category">
-            <field name="name">Tablón Finger</field>
-            <field name="slug">tablon-finger</field>
+        <record id="demo_category_tablon" model="product.public.category">
+            <field name="name">Tablón</field>
+            <field name="slug">tablon</field>
             <field name="sequence">20</field>
         </record>
-        <record id="demo_category_4" model="product.public.category">
-            <field name="name">Tablón Duo</field>
-            <field name="slug">tablon-duo</field>
-            <field name="sequence">21</field>
-        </record>
 
-        <record id="demo_category_5" model="product.public.category">
-            <field name="name">Tabla Finger</field>
-            <field name="slug">tabla-finger</field>
+        <record id="demo_category_tabla" model="product.public.category">
+            <field name="name">Tabla</field>
+            <field name="slug">tabla</field>
             <field name="sequence">30</field>
         </record>
 
-        <record id="demo_category_6" model="product.public.category">
-            <field name="name">Listón Finger</field>
-            <field name="slug">liston-finger</field>
+        <record id="demo_category_liston" model="product.public.category">
+            <field name="name">Listón</field>
+            <field name="slug">liston</field>
             <field name="sequence">40</field>
         </record>
-        <record id="demo_category_7" model="product.public.category">
+
+        <record id="demo_category_alistonado" model="product.public.category">
             <field name="name">Alistonado</field>
             <field name="slug">alistonado</field>
-            <field name="sequence">41</field>
-        </record>
-
-        <record id="demo_category_8" model="product.public.category">
-            <field name="name">Tarima Finger</field>
-            <field name="slug">tarima-finger</field>
             <field name="sequence">50</field>
         </record>
-        <record id="demo_category_9" model="product.public.category">
-            <field name="name">Tarima Finger Sencilla</field>
-            <field name="slug">tarima-finger-sencilla</field>
-            <field name="sequence">51</field>
+
+        <record id="demo_category_tarima" model="product.public.category">
+            <field name="name">Tarima</field>
+            <field name="slug">tarima</field>
+            <field name="sequence">60</field>
         </record>
-        <record id="demo_category_10" model="product.public.category">
-            <field name="name">Tarima G Finger Sencilla</field>
-            <field name="slug">tarima-g-finger-sencilla</field>
-            <field name="sequence">52</field>
+
+        <!--<record id="demo_category_tratamientos" model="product.public.category">-->
+            <!--<field name="name">Tratamientos</field>-->
+            <!--<field name="slug">tratamientos</field>-->
+            <!--<field name="sequence">70</field>-->
+        <!--</record>-->
+
+        <!--<record id="demo_category_acabados" model="product.public.category">-->
+            <!--<field name="name">Acabados</field>-->
+            <!--<field name="slug">acabados</field>-->
+            <!--<field name="sequence">80</field>-->
+        <!--</record>-->
+
+        <record id="demo_category_rollos" model="product.public.category">
+            <field name="name">Rollos</field>
+            <field name="slug">rollos</field>
+            <field name="sequence">90</field>
         </record>
 
         <!-- =================================== BRANDS ========================================== -->
@@ -97,22 +96,22 @@
             <field name="logo" type="base64" file="theme_forestal/static/img/product/Tarimafinger.jpg"/>
         </record>
 
-        <record id="product_brand_tratamientos" model="product.brand">
-            <field name="name">Tratamientos</field>
-            <field name="partner_id" ref="base.main_company"/>
-            <field name="description">
-                La madera es un material orgánico y está sujeto a degradación por la acción de organismos vivos (hongos e insectos)
-                y agentes atmosféricos (sol y lluvia) dependiendo el efecto de muchos factores siendo el principal la humedad.
-            </field>
-            <!--<field name="logo" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>-->
-        </record>
+        <!--<record id="product_brand_tratamientos" model="product.brand">-->
+            <!--<field name="name">Tratamientos</field>-->
+            <!--<field name="partner_id" ref="base.main_company"/>-->
+            <!--<field name="description">-->
+                <!--La madera es un material orgánico y está sujeto a degradación por la acción de organismos vivos (hongos e insectos)-->
+                <!--y agentes atmosféricos (sol y lluvia) dependiendo el efecto de muchos factores siendo el principal la humedad.-->
+            <!--</field>-->
+            <!--&lt;!&ndash;<field name="logo" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>&ndash;&gt;-->
+        <!--</record>-->
 
-        <record id="product_brand_acabados" model="product.brand">
-            <field name="name">Acabados</field>
-            <field name="partner_id" ref="base.main_company"/>
-            <field name="description">Los productos pueden entregarse, si lo desea, con distintos acabados estéticos</field>
-            <!--<field name="logo" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>-->
-        </record>
+        <!--<record id="product_brand_acabados" model="product.brand">-->
+            <!--<field name="name">Acabados</field>-->
+            <!--<field name="partner_id" ref="base.main_company"/>-->
+            <!--<field name="description">Los productos pueden entregarse, si lo desea, con distintos acabados estéticos</field>-->
+            <!--&lt;!&ndash;<field name="logo" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>&ndash;&gt;-->
+        <!--</record>-->
 
         <record id="product_brand_rollos" model="product.brand">
             <field name="name">Rollos</field>
@@ -121,335 +120,403 @@
             <field name="logo" type="base64" file="theme_forestal/static/img/product/Maderaenrollo.jpg"/>
         </record>
 
+        <!-- =================================== VARIANTS ========================================== -->
+        <record id="product_attribute_alto" model="product.attribute">
+            <field name="name">Alto</field>
+            <field name="type">radio</field>
+            <field name="create_variant">true</field>
+        </record>
+        <record id="product_attribute_value_alto_4" model="product.attribute.value">
+            <field name="name">4</field>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+        </record>
+        <record id="product_attribute_value_alto_6" model="product.attribute.value">
+            <field name="name">6</field>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+        </record>
+        <record id="product_attribute_value_alto_7" model="product.attribute.value">
+            <field name="name">7</field>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+        </record>
+        <record id="product_attribute_value_alto_8" model="product.attribute.value">
+            <field name="name">8</field>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+        </record>
+        <record id="product_attribute_value_alto_9" model="product.attribute.value">
+            <field name="name">9</field>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+        </record>
+        <record id="product_attribute_value_alto_14" model="product.attribute.value">
+            <field name="name">14</field>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+        </record>
+        <record id="product_attribute_value_alto_19" model="product.attribute.value">
+            <field name="name">19</field>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+        </record>
+
+        <record id="product_attribute_ancho" model="product.attribute">
+            <field name="name">Ancho</field>
+            <field name="type">radio</field>
+            <field name="create_variant">true</field>
+        </record>
+        <record id="product_attribute_value_ancho_2" model="product.attribute.value">
+            <field name="name">2</field>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+        </record>
+        <record id="product_attribute_value_ancho_4" model="product.attribute.value">
+            <field name="name">4</field>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+        </record>
+        <record id="product_attribute_value_ancho_7" model="product.attribute.value">
+            <field name="name">7</field>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+        </record>
+        <record id="product_attribute_value_ancho_9" model="product.attribute.value">
+            <field name="name">9</field>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+        </record>
+        <record id="product_attribute_value_ancho_14" model="product.attribute.value">
+            <field name="name">14</field>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+        </record>
+
+        <record id="product_attribute_largo" model="product.attribute">
+            <field name="name">Largo</field>
+            <field name="type">radio</field>
+            <field name="create_variant">true</field>
+        </record>
+        <record id="product_attribute_value_200" model="product.attribute.value">
+            <field name="name">200</field>
+            <field name="attribute_id" ref="product_attribute_largo"/>
+        </record>
+        <record id="product_attribute_value_250" model="product.attribute.value">
+            <field name="name">250</field>
+            <field name="attribute_id" ref="product_attribute_largo"/>
+        </record>
+        <record id="product_attribute_value_300" model="product.attribute.value">
+            <field name="name">300</field>
+            <field name="attribute_id" ref="product_attribute_largo"/>
+        </record>
+
+
         <!-- =================================== PRODUCTS ========================================== -->
 
         <!-- ==================================== Viga Laminada Atrio ========================================== -->
-        <record id="demo_product_1" model="product.template">
-            <field name="name">Viga Laminada Atrio 9x9x200</field>
-            <field name="description_short">Viga Laminada Atrio 9x9x200</field>
-            <field name="default_code">Viga Laminada Atrio 9x9x200</field>
-            <field name="slug">Viga-Laminada-Atrio-9x9x200</field>
+       <record id="demo_product_1" model="product.template">
+            <field name="name">Viga Laminada Atrio</field>
+            <field name="description_short">Viga Laminada Atrio</field>
+            <field name="default_code">Viga Laminada Atrio</field>
+            <field name="slug">Viga-Laminada-Atrio</field>
             <field name="type">product</field>
-            <field name="list_price">30</field>
+            <field name="list_price">39</field>
             <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_1')])]"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_viga_laminada')])]"/>
             <field name="product_brand_id" ref="product_brand_vigas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">200</field>
         </record>
-        <record id="demo_product_11" model="product.template">
-            <field name="name">Viga Laminada Atrio 9x9x250</field>
-            <field name="description_short">Viga Laminada Atrio 9x9x250</field>
-            <field name="default_code">Viga Laminada Atrio 9x9x250</field>
-            <field name="slug">Viga-Laminada-Atrio-9x9x250</field>
-            <field name="type">product</field>
-            <field name="list_price">35</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_1')])]"/>
-            <field name="product_brand_id" ref="product_brand_vigas"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">250</field>
+
+        <record id="product_attribute_1_line_1" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_1"/>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9')])]"/>
         </record>
-        <record id="demo_product_12" model="product.template">
-            <field name="name">Viga Laminada Atrio 9x9x300</field>
-            <field name="description_short">Viga Laminada Atrio 9x9x300</field>
-            <field name="default_code">Viga Laminada Atrio 9x9x300</field>
-            <field name="slug">Viga-Laminada-Atrio-9x9x300</field>
-            <field name="type">product</field>
-            <field name="list_price">40</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_1')])]"/>
-            <field name="product_brand_id" ref="product_brand_vigas"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadatrio.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">300</field>
+        <record id="product_attribute_1_line_2" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_1"/>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_9')])]"/>
+        </record>
+        <record id="product_attribute_1_line_3" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_1"/>
+            <field name="attribute_id" ref="product_attribute_largo"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_200'), ref('product_attribute_value_250'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <record id="product_variant_11" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_1"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_9'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_12" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_1"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_9'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_13" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_1"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_9'), ref('product_attribute_value_300')])]"/>
         </record>
 
         <!-- ==================================== Viga Laminada Duo ========================================== -->
         <record id="demo_product_2" model="product.template">
-            <field name="name">Viga Laminada Duo 9x9x200</field>
-            <field name="description_short">Viga Laminada Duo 9x9x200</field>
-            <field name="default_code">Viga Laminada Duo 9x9x200</field>
-            <field name="slug">Viga-Laminada-Duo-9x9x200</field>
+            <field name="name">Viga Laminada Duo</field>
+            <field name="description_short">Viga Laminada Duo</field>
+            <field name="default_code">Viga Laminada Duo</field>
+            <field name="slug">Viga-Laminada-Duo</field>
             <field name="type">product</field>
-            <field name="list_price">30</field>
+            <field name="list_price">37</field>
             <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_2')])]"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_viga_laminada')])]"/>
             <field name="product_brand_id" ref="product_brand_vigas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadaduo.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">200</field>
         </record>
-        <record id="demo_product_21" model="product.template">
-            <field name="name">Viga Laminada Duo 9x9x250</field>
-            <field name="description_short">Viga Laminada Duo 9x9x250</field>
-            <field name="default_code">Viga Laminada Duo 9x9x250</field>
-            <field name="slug">Viga-Laminada-Duo-9x9x250</field>
-            <field name="type">product</field>
-            <field name="list_price">35</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_2')])]"/>
-            <field name="product_brand_id" ref="product_brand_vigas"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadaduo.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">250</field>
+
+        <record id="product_attribute_2_line_1" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_2"/>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_alto_7'), ref('product_attribute_value_alto_9')])]"/>
         </record>
-        <record id="demo_product_22" model="product.template">
-            <field name="name">Viga Laminada Duo 9x9x300</field>
-            <field name="description_short">Viga Laminada Duo 9x9x300</field>
-            <field name="default_code">Viga Laminada Duo 9x9x300</field>
-            <field name="slug">Viga-Laminada-Duo-9x9x300</field>
-            <field name="type">product</field>
-            <field name="list_price">40</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_2')])]"/>
-            <field name="product_brand_id" ref="product_brand_vigas"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Vigalaminadaduo.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">300</field>
+        <record id="product_attribute_2_line_2" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_2"/>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_7'), ref('product_attribute_value_ancho_9')])]"/>
+        </record>
+        <record id="product_attribute_2_line_3" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_2"/>
+            <field name="attribute_id" ref="product_attribute_largo"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_200'), ref('product_attribute_value_250'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <record id="product_variant_21" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_2"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_7'), ref('product_attribute_value_ancho_7'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_22" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_2"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_7'), ref('product_attribute_value_ancho_7'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_23" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_2"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_7'), ref('product_attribute_value_ancho_7'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <record id="product_variant_24" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_2"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_9'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_25" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_2"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_9'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_26" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_2"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_9'), ref('product_attribute_value_300')])]"/>
         </record>
 
         <!-- ==================================== Tablon Finger ========================================== -->
         <record id="demo_product_3" model="product.template">
-            <field name="name">Tablon Finger 9x4x200</field>
-            <field name="description_short">Tablon Finger 9x4x200</field>
-            <field name="default_code">Tablon Finger 9x4x200</field>
-            <field name="slug">Tablon-finger-9x4x200</field>
+            <field name="name">Tablon Finger</field>
+            <field name="description_short">Tablon Finger</field>
+            <field name="default_code">Tablon Finger</field>
+            <field name="slug">Tablon-finger</field>
             <field name="type">product</field>
             <field name="list_price">30</field>
             <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_3')])]"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_tablon')])]"/>
             <field name="product_brand_id" ref="product_brand_tablones"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">200</field>
-        </record>
-        <record id="demo_product_31" model="product.template">
-            <field name="name">Tablon Finger 9x4x250</field>
-            <field name="description_short">Tablon Finger 9x4x250</field>
-            <field name="default_code">Tablon Finger 9x4x250</field>
-            <field name="slug">Tablon-finger-9x4x250</field>
-            <field name="type">product</field>
-            <field name="list_price">35</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_3')])]"/>
-            <field name="product_brand_id" ref="product_brand_tablones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">250</field>
-        </record>
-        <record id="demo_product_32" model="product.template">
-            <field name="name">Tablon Finger 9x4x300</field>
-            <field name="description_short">Tablon Finger 9x4x300</field>
-            <field name="default_code">Tablon Finger 9x4x300</field>
-            <field name="slug">Tablon-finger-9x4x300</field>
-            <field name="type">product</field>
-            <field name="list_price">40</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_3')])]"/>
-            <field name="product_brand_id" ref="product_brand_tablones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">300</field>
         </record>
 
-        <!-- ==================================== Tablon Finger ========================================== -->
+        <record id="product_attribute_3_line_1" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_3"/>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9')])]"/>
+        </record>
+        <record id="product_attribute_3_line_2" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_3"/>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_4')])]"/>
+        </record>
+        <record id="product_attribute_3_line_3" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_3"/>
+            <field name="attribute_id" ref="product_attribute_largo"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_200'), ref('product_attribute_value_250'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <record id="product_variant_31" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_3"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_32" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_3"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_33" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_3"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <!-- ==================================== Liston Finger ========================================= -->
         <record id="demo_product_4" model="product.template">
-            <field name="name">Tablon Finger 9x4x200</field>
-            <field name="description_short">Tablon Finger 9x4x200</field>
-            <field name="default_code">Tablon Finger 9x4x200</field>
-            <field name="slug">Tablon-finger-9x4x200</field>
+            <field name="name">Liston Finger</field>
+            <field name="description_short">Liston Finger</field>
+            <field name="default_code">Liston Finger</field>
+            <field name="slug">Liston-finger</field>
             <field name="type">product</field>
             <field name="list_price">30</field>
             <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_4')])]"/>
-            <field name="product_brand_id" ref="product_brand_tablones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">200</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_liston')])]"/>
+            <field name="product_brand_id" ref="product_brand_listones"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
         </record>
-        <record id="demo_product_41" model="product.template">
-            <field name="name">Tablon Finger 9x4x250</field>
-            <field name="description_short">Tablon Finger 9x4x250</field>
-            <field name="default_code">Tablon Finger 9x4x250</field>
-            <field name="slug">Tablon-finger-9x4x250</field>
-            <field name="type">product</field>
-            <field name="list_price">35</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_4')])]"/>
-            <field name="product_brand_id" ref="product_brand_tablones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">250</field>
+
+        <record id="product_attribute_4_line_1" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_alto_4'), ref('product_attribute_value_alto_6')])]"/>
         </record>
-        <record id="demo_product_42" model="product.template">
-            <field name="name">Tablon Finger 9x4x300</field>
-            <field name="description_short">Tablon Finger 9x4x300</field>
-            <field name="default_code">Tablon Finger 9x4x300</field>
-            <field name="slug">Tablon-finger-9x4x300</field>
-            <field name="type">product</field>
-            <field name="list_price">40</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_4')])]"/>
-            <field name="product_brand_id" ref="product_brand_tablones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablonfinger.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">300</field>
+        <record id="product_attribute_4_line_2" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_2'), ref('product_attribute_value_ancho_4')])]"/>
+        </record>
+        <record id="product_attribute_4_line_3" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_id" ref="product_attribute_largo"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_200'), ref('product_attribute_value_250'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <record id="product_variant_41" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_4'), ref('product_attribute_value_ancho_2'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_42" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_4'), ref('product_attribute_value_ancho_2'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_43" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_4'), ref('product_attribute_value_ancho_2'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <record id="product_variant_44" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_4'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_45" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_4'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_46" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_4'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <record id="product_variant_411" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_6'), ref('product_attribute_value_ancho_2'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_422" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_6'), ref('product_attribute_value_ancho_2'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_433" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_6'), ref('product_attribute_value_ancho_2'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <record id="product_variant_443" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_6'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_455" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_6'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_466" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_4"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_6'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_300')])]"/>
         </record>
 
         <!-- ==================================== Tabla Finger ========================================== -->
         <record id="demo_product_5" model="product.template">
-            <field name="name">Tabla Finger 9x2x200</field>
-            <field name="description_short">Tabla Finger 9x2x200</field>
-            <field name="default_code">Tabla Finger 9x2x200</field>
-            <field name="slug">Tabla-finger-9x2x200</field>
+            <field name="name">Tabla Finger</field>
+            <field name="description_short">Tabla Finger</field>
+            <field name="default_code">Tabla Finger</field>
+            <field name="slug">Tabla-finger</field>
             <field name="type">product</field>
             <field name="list_price">30</field>
             <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_5')])]"/>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_tabla')])]"/>
             <field name="product_brand_id" ref="product_brand_tablas"/>
             <field name="image" type="base64" file="theme_forestal/static/img/product/Tablafinger.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">200</field>
         </record>
-        <record id="demo_product_51" model="product.template">
-            <field name="name">Tabla Finger 9x2x250</field>
-            <field name="description_short">Tabla Finger 9x2x250</field>
-            <field name="default_code">Tabla Finger 9x2x250</field>
-            <field name="slug">Tabla-finger-9x2x250</field>
-            <field name="type">product</field>
-            <field name="list_price">35</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_5')])]"/>
-            <field name="product_brand_id" ref="product_brand_tablas"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablafinger.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">250</field>
+        <record id="product_attribute_5_line_1" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_5"/>
+            <field name="attribute_id" ref="product_attribute_alto"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9')])]"/>
         </record>
-        <record id="demo_product_52" model="product.template">
-            <field name="name">Tabla Finger 9x2x300</field>
-            <field name="description_short">Tabla Finger 9x2x300</field>
-            <field name="default_code">Tabla Finger 9x2x300</field>
-            <field name="slug">Tabla-finger-9x2x300</field>
-            <field name="type">product</field>
-            <field name="list_price">40</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_5')])]"/>
-            <field name="product_brand_id" ref="product_brand_tablas"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Tablafinger.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">300</field>
+        <record id="product_attribute_5_line_2" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_5"/>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_4')])]"/>
+        </record>
+        <record id="product_attribute_5_line_3" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_5"/>
+            <field name="attribute_id" ref="product_attribute_largo"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_200'), ref('product_attribute_value_250'), ref('product_attribute_value_300')])]"/>
         </record>
 
-        <!-- ==================================== Liston Finger x2 ========================================= -->
+        <record id="product_variant_51" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_5"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_52" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_5"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_53" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_5"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_alto_9'), ref('product_attribute_value_ancho_4'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <!-- ==================================== Liston Finger ========================================= -->
         <record id="demo_product_6" model="product.template">
-            <field name="name">Liston Finger 9x2x200</field>
-            <field name="description_short">Liston Finger 9x2x200</field>
-            <field name="default_code">Liston Finger 9x2x200</field>
-            <field name="slug">Liston-finger-9x2x200</field>
+            <field name="name">Tarima Finger</field>
+            <field name="description_short">Tarima Finger</field>
+            <field name="default_code">Tarima Finger</field>
+            <field name="slug">Tarima-finger</field>
             <field name="type">product</field>
             <field name="list_price">30</field>
             <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
-            <field name="product_brand_id" ref="product_brand_listones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">200</field>
-        </record>
-        <record id="demo_product_61" model="product.template">
-            <field name="name">Liston Finger 9x2x250</field>
-            <field name="description_short">Liston Finger 9x2x250</field>
-            <field name="default_code">Liston Finger 9x2x250</field>
-            <field name="slug">Liston-finger-9x2x250</field>
-            <field name="type">product</field>
-            <field name="list_price">35</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
-            <field name="product_brand_id" ref="product_brand_listones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">250</field>
-        </record>
-        <record id="demo_product_62" model="product.template">
-            <field name="name">Liston Finger 9x2x300</field>
-            <field name="description_short">Liston Finger 9x2x300</field>
-            <field name="default_code">Liston Finger 9x2x300</field>
-            <field name="slug">Liston-finger-9x2x300</field>
-            <field name="type">product</field>
-            <field name="list_price">40</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
-            <field name="product_brand_id" ref="product_brand_listones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx2.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">300</field>
+            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_tarima')])]"/>
+            <field name="product_brand_id" ref="product_brand_tarimas"/>
+            <field name="image" type="base64" file="theme_forestal/static/img/product/Tarimafinger.jpg"/>
         </record>
 
-        <!-- ==================================== Liston Finger x4 ========================================= -->
-        <record id="demo_product_7" model="product.template">
-            <field name="name">Liston Finger 9x4x400</field>
-            <field name="description_short">Liston Finger 9x4x200</field>
-            <field name="default_code">Liston Finger 9x4x200</field>
-            <field name="slug">Liston-finger-9x4x200</field>
-            <field name="type">product</field>
-            <field name="list_price">30</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
-            <field name="product_brand_id" ref="product_brand_listones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">200</field>
+        <record id="product_attribute_6_line_2" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_6"/>
+            <field name="attribute_id" ref="product_attribute_ancho"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_9'), ref('product_attribute_value_ancho_14')])]"/>
         </record>
-        <record id="demo_product_71" model="product.template">
-            <field name="name">Liston Finger 9x4x250</field>
-            <field name="description_short">Liston Finger 9x4x250</field>
-            <field name="default_code">Liston Finger 9x4x250</field>
-            <field name="slug">Liston-finger-9x4x250</field>
-            <field name="type">product</field>
-            <field name="list_price">35</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
-            <field name="product_brand_id" ref="product_brand_listones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">250</field>
+        <record id="product_attribute_6_line_3" model="product.attribute.line">
+            <field name="product_tmpl_id" ref="demo_product_6"/>
+            <field name="attribute_id" ref="product_attribute_largo"/>
+            <field name="value_ids" eval="[(6,0,[ref('product_attribute_value_200'), ref('product_attribute_value_250'), ref('product_attribute_value_300')])]"/>
         </record>
-        <record id="demo_product_72" model="product.template">
-            <field name="name">Liston Finger 9x4x300</field>
-            <field name="description_short">Liston Finger 9x4x300</field>
-            <field name="default_code">Liston Finger 9x4x300</field>
-            <field name="slug">Liston-finger-9x4x300</field>
-            <field name="type">product</field>
-            <field name="list_price">40</field>
-            <field name="website_published">true</field>
-            <field name="public_categ_ids" eval="[(6,0,[ref('demo_category_6')])]"/>
-            <field name="product_brand_id" ref="product_brand_listones"/>
-            <field name="image" type="base64" file="theme_forestal/static/img/product/Listonfingerx4.jpg"/>
-            <field name="height">9</field>
-            <field name="width">9</field>
-            <field name="length">300</field>
+
+        <record id="product_variant_61" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_6"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_9'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_62" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_6"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_9'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_63" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_6"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_9'), ref('product_attribute_value_300')])]"/>
+        </record>
+
+        <record id="product_variant_64" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_6"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_14'), ref('product_attribute_value_200')])]"/>
+        </record>
+        <record id="product_variant_65" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_6"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_14'), ref('product_attribute_value_250')])]"/>
+        </record>
+        <record id="product_variant_66" model="product.product">
+            <field name="product_tmpl_id" ref="demo_product_6"/>
+            <field name="attribute_value_ids" eval="[(6,0,[ref('product_attribute_value_ancho_14'), ref('product_attribute_value_300')])]"/>
         </record>
 
     </data>

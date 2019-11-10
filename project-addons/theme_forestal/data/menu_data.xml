@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data noupdate="0">
+    <data noupdate="1">
 
         <!-- Main menu -->
         <record id="website.main_menu" model="website.menu">
+            <field name="name">Menú Principal Forestal</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
 
@@ -11,7 +12,6 @@
         <record id="website.menu_homepage" model="website.menu">
             <field name="sequence" type="int">10</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
         </record>
 
         <!-- Shop Menu -->
@@ -23,11 +23,20 @@
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
 
+        <!-- Menu in website for Brand -->
+        <record id="website_sale_product_brand.menu_website_sale_brand" model="website.menu">
+            <field name="name">Product Brands</field>
+            <field name="url">/page/product_brands</field>
+            <field name="sequence" type="int">30</field>
+            <field name="parent_id" ref="website.main_menu" />
+            <field name="website_id" ref="website_base_forestal.forestal_website"/>
+        </record>
+
         <!-- Products -->
         <record id="menu_products" model="website.menu">
             <field name="name">Products</field>
             <field name="url">/page/products</field>
-            <field name="sequence" type="int">30</field>
+            <field name="sequence" type="int">40</field>
             <field name="parent_id" ref="website.main_menu" />
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
@@ -37,65 +46,49 @@
             <field name="name">Viguería Finger</field>
             <field name="url">/page/products#vigueria_finger</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">31</field>
+            <field name="sequence" type="int">41</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
         </record>
         <record id="products_submenu_aserrada" model="website.menu">
             <field name="name">Madera Aserrada</field>
             <field name="url">/page/products#madera_aserrada</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">32</field>
+            <field name="sequence" type="int">42</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
         </record>
         <record id="products_submenu_laminada" model="website.menu">
             <field name="name">Madera Laminada</field>
             <field name="url">/page/products#madera_laminada</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">33</field>
+            <field name="sequence" type="int">43</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
         </record>
         <record id="products_submenu_tarima" model="website.menu">
             <field name="name">Tarima</field>
             <field name="url">/page/products#tarima</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">34</field>
+            <field name="sequence" type="int">44</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
         </record>
         <record id="products_submenu_acabados" model="website.menu">
             <field name="name">Tratamientos y Acabados</field>
             <field name="url">/page/products#tratamientos_y_acabados</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">35</field>
+            <field name="sequence" type="int">45</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
         </record>
         <record id="products_submenu_rollo" model="website.menu">
             <field name="name">Madera en Rollo</field>
             <field name="url">/page/products#madera_en_rollo</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">36</field>
+            <field name="sequence" type="int">46</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
         </record>
         <record id="products_submenu_marcado" model="website.menu">
             <field name="name">Marcado CE</field>
             <field name="url">/page/products#marcado_ce</field>
             <field name="parent_id" ref="theme_forestal.menu_products"/>
-            <field name="sequence" type="int">37</field>
-            <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
-        </record>
-
-        <!-- Menu in website for Brand -->
-        <record id="website_sale_product_brand.menu_website_sale_brand" model="website.menu">
-            <field name="name">Product Brands</field>
-            <field name="url">/page/product_brands</field>
-            <field name="sequence" type="int">40</field>
-            <field name="parent_id" ref="website.main_menu" />
+            <field name="sequence" type="int">47</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
         </record>
 
@@ -114,7 +107,6 @@
             <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
             <field name="sequence" type="int">81</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
         </record>
         <record id="aboutus_submenu_advantage" model="website.menu">
             <field name="name">Our Advantages</field>
@@ -122,7 +114,6 @@
             <field name="parent_id" ref="theme_forestal.menu_aboutus"/>
             <field name="sequence" type="int">82</field>
             <field name="website_id" ref="website_base_forestal.forestal_website"/>
-            <field name="website_published">True</field>
         </record>
 
         <!-- Contact Us -->

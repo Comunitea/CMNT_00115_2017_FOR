@@ -3,7 +3,7 @@
 
     <!-- About us page -->
     <template id="who_we_are_template" name="Who We Are" inherit_id="theme_forestal.who_we_are">
-        <xpath expr="//div[@class='container']" position="inside">
+        <xpath expr="//div[hasclass('container')]" position="inside">
             <div class="container">
                 <section class="s_title mb32">
                     <div class="container">
@@ -56,24 +56,26 @@
                 </section>
                 <section class="s_images mt32 mb32">
                     <div class="row">
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
-                                    <i class="fa fa-circle fa-stack-2x" style="color: #005239"/>
-                                    <i style="color: #FFF" class="fa fa-tree fa-stack-1x"/>
-                                </figure>
-                                <h3>Especialidad en Pino Silvestre Valsaín</h3>
-                                <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
-                                    <i class="fa fa-circle fa-stack-2x" style="color: #005239"/>
-                                    <i style="color: #FFF" class="fa fa-industry fa-stack-1x"/>
-                                </figure>
-                                <h3>Aserradero y Almacén</h3>
-                                <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
-                                    <i class="fa fa-circle fa-stack-2x" style="color: #005239"/>
-                                    <i style="color: #FFF" class="fa fa-map fa-stack-1x"/>
-                                </figure>
-                                <h3>Vigas de Madera Laminada</h3>
-                            </div>
+                        <div class="col-md-4 text-center">
+                            <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
+                                <i class="fa fa-circle fa-stack-2x" style="color: #005239"/>
+                                <i style="color: #FFF" class="fa fa-tree fa-stack-1x"/>
+                            </figure>
+                            <h3>Especialidad en Pino Silvestre Valsaín</h3>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
+                                <i class="fa fa-circle fa-stack-2x" style="color: #005239"/>
+                                <i style="color: #FFF" class="fa fa-industry fa-stack-1x"/>
+                            </figure>
+                            <h3>Aserradero y Almacén</h3>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <figure class="ut-service-icon fa-stack fa-lg " style="line-height:60px;">
+                                <i class="fa fa-circle fa-stack-2x" style="color: #005239"/>
+                                <i style="color: #FFF" class="fa fa-map fa-stack-1x"/>
+                            </figure>
+                            <h3>Vigas de Madera Laminada</h3>
                         </div>
                     </div>
                 </section>

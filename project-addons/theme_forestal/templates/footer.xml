@@ -2,10 +2,13 @@
 <odoo>
 
     <!-- Footer changes -->
-    <template id="website_footer_default" inherit_id="website.footer_default">
-        <!--<xpath expr="//div[@id='footer']" position="before">
-            <div class="footer-background "/>
-        </xpath>-->
+    <template id="website_blog_header_footer_custom" name="Automatic Footer Forestal Template" inherit_id="website_blog.header_footer_custom">
+        <!-- Put footer on checkout again -->
+        <xpath expr="//div[@id='footer']" position="attributes">
+            <attribute name="t-if"/>
+        </xpath>
+
+        <!-- Custom footer -->
         <xpath expr="//div[@id='footer']/div[hasclass('row')]" position="replace">
             <div class="row">
                 <div class="col-md-4">

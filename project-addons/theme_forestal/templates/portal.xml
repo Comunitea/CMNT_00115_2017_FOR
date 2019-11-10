@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--Includes Dimensión to My Quotations and My Sales Orders in My Portal-->
+    <template id="sale_portal_order_page" inherit_id="sale.portal_order_page">
+        <xpath expr="//div[hasclass('row')][2]/div[hasclass('col-md-6')]" position="attributes">
+            <attribute name="class">col-md-4</attribute>
+        </xpath>
+
+        <xpath expr="//div[hasclass('row')][2]/div[hasclass('col-md-4')]" position="after">
+            <div class="hidden-sm hidden-xs col-md-2 text-center">
+                <strong>Dimensión</strong>
+            </div>
+        </xpath>
+
+        <xpath expr="//div[@id='product_name']" position="attributes">
+            <attribute name="class">col-lg-3 col-sm-4 col-xs-3</attribute>
+        </xpath>
+        <xpath expr="//div[@class='row orders_vertical_align']/div[4]" position="attributes">
+            <attribute name="class">col-xs-2 text-right</attribute>
+        </xpath>
+
+        <xpath expr="//div[@id='product_name']" position="after">
+            <div class="col-xs-2 text-center">
+                <t t-if="ol.product_id.attribute_value_ids and len(ol.product_id.attribute_value_ids) > 2">
+                    <span t-esc="ol.product_id.attribute_value_ids[0].name +'x' +ol.product_id.attribute_value_ids[1].name + 'x' + ol.product_id.attribute_value_ids[2].name"/>
+                </t>
+                <t t-elif="ol.product_id.attribute_value_ids and len(ol.product_id.attribute_value_ids) > 1">
+                    <span t-esc="ol.product_id.attribute_value_ids[0].name +'x' +ol.product_id.attribute_value_ids[1].name"/>
+                </t>
+                <t t-else="">
+                    <span t-esc="'N/D'"/>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <!--Includes Dimensión to My Invoices and Payments in My Portal-->
+    <template id="portal_invoice_report" inherit_id="account.portal_invoice_report">
+        <xpath expr="//thead/tr/th" position="after">
+            <th class="text-center td-dimension">Dimensión</th>
+        </xpath>
+
+        <xpath expr="//tbody/tr/td" position="after">
+            <td class="text-center td-dimension">
+                <t t-if="l.product_id.attribute_value_ids and len(l.product_id.attribute_value_ids) > 2">
+                    <span t-esc="l.product_id.attribute_value_ids[0].name +'x' +l.product_id.attribute_value_ids[1].name + 'x' + l.product_id.attribute_value_ids[2].name"/>
+                </t>
+                <t t-elif="l.product_id.attribute_value_ids and len(l.product_id.attribute_value_ids) > 1">
+                    <span t-esc="l.product_id.attribute_value_ids[0].name +'x' +l.product_id.attribute_value_ids[1].name"/>
+                </t>
+                <t t-else="">
+                    <span t-esc="'N/D'"/>
+                </t>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>

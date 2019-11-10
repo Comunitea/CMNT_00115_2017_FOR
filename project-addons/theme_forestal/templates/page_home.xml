@@ -2,7 +2,7 @@
 <odoo>
 
     <template id="homepage_template" inherit_id="theme_forestal.homepage">
-        <xpath expr="//div[@class='container']" position="before">
+        <xpath expr="//div[hasclass('container')]" position="before">
             <!-- Slider section -->
             <div id="carousel_homepage" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -68,7 +68,7 @@
                 </a>
             </div>
         </xpath>
-        <xpath expr="//div[@class='container']" position="inside">
+        <xpath expr="//div[hasclass('container')]" position="inside">
             <section class="s_title mt32">
                 <div class="container">
                     <div class="row">
@@ -188,16 +188,16 @@
                     </div>
                     <div class="row mt32 mb32">
                         <div class="col-md-3">
-                            <img src="/theme_forestal/static/demo/img-02.jpg" class="img-responsive img-circle img-thumbnail" alt="Responsive image"/>
+                            <img src="/theme_forestal/static/img/home/01.jpg" class="img-responsive img-circle img-thumbnail" alt="image"/>
                         </div>
                         <div class="col-md-3">
-                            <img src="/theme_forestal/static/demo/img-03.jpg" class="img-responsive img-circle img-thumbnail" alt="Responsive image"/>
+                            <img src="/theme_forestal/static/img/home/02.jpg" class="img-responsive img-circle img-thumbnail" alt="image"/>
                         </div>
                         <div class="col-md-3">
-                            <img src="/theme_forestal/static/demo/img-04.jpg" class="img-responsive img-circle img-thumbnail" alt="Responsive image"/>
+                            <img src="/theme_forestal/static/img/home/03.jpg" class="img-responsive img-circle img-thumbnail" alt="image"/>
                         </div>
                         <div class="col-md-3">
-                            <img src="/theme_forestal/static/demo/img-05.jpg" class="img-responsive img-circle img-thumbnail" alt="Responsive image"/>
+                            <img src="/theme_forestal/static/img/home/04.jpg" class="img-responsive img-circle img-thumbnail" alt="image"/>
                         </div>
                     </div>
                     <div class="row">
